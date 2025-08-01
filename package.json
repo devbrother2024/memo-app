@@ -19,6 +19,7 @@
     "test:install": "playwright install"
   },
   "dependencies": {
+    "@uiw/react-md-editor": "^4.0.8",
     "next": "15.4.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
