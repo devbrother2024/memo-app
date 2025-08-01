@@ -1,4 +1,4 @@
-export interface Memo {
+﻿export interface Memo {
   id: string
   title: string
   content: string
@@ -25,4 +25,10 @@ export const MEMO_CATEGORIES: Record<MemoCategory, string> = {
   other: '기타',
 }
 
-export const DEFAULT_CATEGORIES = Object.keys(MEMO_CATEGORIES) as MemoCategory[]
+export const DEFAULT_CATEGORIES: MemoCategory[] = [
+  'personal',
+  'work',
+  'study',
+  'idea',
+  'other',
+]

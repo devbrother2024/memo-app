@@ -1,11 +1,11 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { useMemos } from '@/hooks/useMemos'
 import { Memo, MemoFormData } from '@/types/memo'
 import MemoList from '@/components/MemoList'
 import MemoForm from '@/components/MemoForm'
-import MemoViewerModal from '@/components/MemoViewerModal' // 추가
+import MemoViewerModal from '@/components/MemoViewerModal'
 
 export default function Home() {
   const {
@@ -36,13 +36,13 @@ export default function Home() {
     if (editingMemo) {
       updateMemo(editingMemo.id, formData)
       setEditingMemo(null)
-      setIsFormOpen(false) // 폼 닫기
+      setIsFormOpen(false)
     }
   }
 
   const handleEditMemo = (memo: Memo) => {
     setEditingMemo(memo)
-    setSelectedMemo(null) // 뷰어 닫기
+    setSelectedMemo(null)
     setIsFormOpen(true)
   }
 
@@ -51,25 +51,21 @@ export default function Home() {
     setEditingMemo(null)
   }
 
-  // 뷰어 열기 핸들러
   const handleViewMemo = (memo: Memo) => {
     setSelectedMemo(memo)
   }
 
-  // 뷰어 닫기 핸들러
   const handleCloseViewer = () => {
     setSelectedMemo(null)
   }
 
-  // 뷰어에서 삭제 처리
-  const handleDeleteFromViewer = (id: number) => {
+  const handleDeleteFromViewer = (id: string) => {
     deleteMemo(id)
     setSelectedMemo(null)
   }
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 헤더 */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -82,7 +78,7 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               <button
                 onClick={() => {
-                  setEditingMemo(null); // 새 메모 작성 시 editingMemo 초기화
+                  setEditingMemo(null);
                   setIsFormOpen(true);
                 }}
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
@@ -107,7 +103,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <MemoList
           memos={memos}
@@ -118,12 +113,11 @@ export default function Home() {
           onCategoryChange={filterByCategory}
           onEditMemo={handleEditMemo}
           onDeleteMemo={deleteMemo}
-          onViewMemo={handleViewMemo} // 추가
+          onViewMemo={handleViewMemo}
           stats={stats}
         />
       </main>
 
-      {/* 모달 폼 */}
       <MemoForm
         isOpen={isFormOpen}
         onClose={handleCloseForm}
@@ -131,7 +125,6 @@ export default function Home() {
         editingMemo={editingMemo}
       />
 
-      {/* 뷰어 모달 추가 */}
       {selectedMemo && (
         <MemoViewerModal
           memo={selectedMemo}

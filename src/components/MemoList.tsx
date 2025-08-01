@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 
 import { Memo, MEMO_CATEGORIES, DEFAULT_CATEGORIES } from '@/types/memo'
 import MemoItem from './MemoItem'
@@ -11,8 +11,8 @@ interface MemoListProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
   onEditMemo: (memo: Memo) => void
-  onDeleteMemo: (id: number) => void // id ?�?�을 number�??�정
-  onViewMemo: (memo: Memo) => void // 추�?
+  onDeleteMemo: (id: string) => void
+  onViewMemo: (memo: Memo) => void
   stats: {
     total: number
     filtered: number
@@ -29,24 +29,24 @@ export default function MemoList({
   onCategoryChange,
   onEditMemo,
   onDeleteMemo,
-  onViewMemo, // 추�?
+  onViewMemo,
   stats,
 }: MemoListProps) {
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-        <span className="ml-3 text-gray-600">메모�?불러?�는 �?..</span>
+        <span className="ml-3 text-gray-600">메모를 불러오는 중...</span>
       </div>
     )
   }
 
   return (
     <div className="space-y-6">
-      {/* 검??�??�터 */}
+      {/* 검색 및 필터 */}
       <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-4">
         <div className="flex flex-col sm:flex-row gap-4">
-          {/* 검??*/}
+          {/* 검색 */}
           <div className="flex-1">
             <div className="relative">
               <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -69,19 +69,19 @@ export default function MemoList({
                 value={searchQuery}
                 onChange={e => onSearchChange(e.target.value)}
                 className="placeholder-gray-400 text-gray-400 block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
-                placeholder="메모 검??.."
+                placeholder="메모 검색..."
               />
             </div>
           </div>
 
-          {/* 카테고리 ?�터 */}
+          {/* 카테고리 필터 */}
           <div className="sm:w-48">
             <select
               value={selectedCategory}
               onChange={e => onCategoryChange(e.target.value)}
               className="text-gray-400 block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
             >
-              <option value="all">?�체 카테고리</option>
+              <option value="all">전체 카테고리</option>
               {DEFAULT_CATEGORIES.map(category => (
                 <option key={category} value={category}>
                   {MEMO_CATEGORIES[category]} ({stats.byCategory[category] || 0}
@@ -92,15 +92,15 @@ export default function MemoList({
           </div>
         </div>
 
-        {/* ?�계 ?�보 */}
+        {/* 통계 정보 */}
         <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
           <div>
             {searchQuery || selectedCategory !== 'all' ? (
               <span>
-                {stats.filtered}�?메모 (?�체 {stats.total}�?�?
+                {stats.filtered}개 메모 (전체 {stats.total}개 중)
               </span>
             ) : (
-              <span>�?{stats.total}개의 메모</span>
+              <span>총 {stats.total}개의 메모</span>
             )}
           </div>
 
@@ -112,7 +112,8 @@ export default function MemoList({
               }}
               className="text-blue-600 hover:text-blue-800 hover:underline"
             >
-              ?�터 초기??            </button>
+              필터 초기화
+            </button>
           )}
         </div>
       </div>
@@ -137,13 +138,13 @@ export default function MemoList({
           </div>
           <h3 className="text-lg font-medium text-gray-900 mb-2">
             {searchQuery || selectedCategory !== 'all'
-              ? '검??결과가 ?�습?�다'
-              : '?�직 메모가 ?�습?�다'}
+              ? '검색 결과가 없습니다'
+              : '아직 메모가 없습니다'}
           </h3>
           <p className="text-gray-600 mb-4">
             {searchQuery || selectedCategory !== 'all'
-              ? '?�른 검?�어??카테고리�??�도?�보?�요.'
-              : '�?번째 메모�??�성?�보?�요!'}
+              ? '다른 검색어나 카테고리를 시도해보세요.'
+              : '첫 번째 메모를 작성해보세요!'}
           </p>
         </div>
       ) : (
@@ -154,7 +155,7 @@ export default function MemoList({
               memo={memo}
               onEdit={onEditMemo}
               onDelete={onDeleteMemo}
-              onView={onViewMemo} // 변�? onView�??�달
+              onView={onViewMemo}
             />
           ))}
         </div>
