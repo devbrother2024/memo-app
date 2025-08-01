@@ -11,7 +11,8 @@ interface MemoListProps {
   onSearchChange: (query: string) => void
   onCategoryChange: (category: string) => void
   onEditMemo: (memo: Memo) => void
-  onDeleteMemo: (id: string) => void
+  onDeleteMemo: (id: number) => void // id 타입을 number로 수정
+  onViewMemo: (memo: Memo) => void // 추가
   stats: {
     total: number
     filtered: number
@@ -28,6 +29,7 @@ export default function MemoList({
   onCategoryChange,
   onEditMemo,
   onDeleteMemo,
+  onViewMemo, // 추가
   stats,
 }: MemoListProps) {
   if (loading) {
@@ -153,6 +155,7 @@ export default function MemoList({
               memo={memo}
               onEdit={onEditMemo}
               onDelete={onDeleteMemo}
+              onView={onViewMemo} // 변경: onView로 전달
             />
           ))}
         </div>
