@@ -1,0 +1,149 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - heading "📝 메모 앱" [level=1]
+  - button "새 메모":
+    - img
+    - text: 새 메모
+- main:
+  - heading "🔍 Supabase 연결 테스트" [level=2]
+  - paragraph: "연결 상태:"
+  - paragraph: ✅ 연결 성공
+  - paragraph: "환경변수 상태:"
+  - list:
+    - listitem: "SUPABASE_URL: ✅ 설정됨"
+    - listitem: "SUPABASE_KEY: ✅ 설정됨"
+  - paragraph: "데이터베이스에서 가져온 메모 (3개):"
+  - list:
+    - listitem:
+      - strong: 첫 번째 메모
+      - text: "- personal"
+    - listitem:
+      - strong: 업무 관련 메모
+      - text: "- work"
+    - listitem:
+      - strong: 학습 노트
+      - text: "- study"
+  - img
+  - textbox "메모 검색..."
+  - combobox:
+    - option "전체 카테고리" [selected]
+    - option "개인 (1)"
+    - option "업무 (1)"
+    - option "학습 (1)"
+    - option "아이디어 (0)"
+    - option "기타 (0)"
+  - text: 총 3개의 메모
+  - heading "첫 번째 메모" [level=3]
+  - text: 개인 2025년 8월 1일 오후 02:25
+  - button "편집":
+    - img
+  - button "삭제":
+    - img
+  - paragraph: "# 안녕하세요!\\n\\n이것은 Supabase로 마이그레이션된 첫 번째 메모입니다."
+  - text: "#test #supabase"
+  - heading "업무 관련 메모" [level=3]
+  - text: 업무 2025년 8월 1일 오후 02:25
+  - button "편집":
+    - img
+  - button "삭제":
+    - img
+  - paragraph: "## 오늘 할 일\\n\\n- [ ] 프로젝트 리뷰\\n- [ ] 미팅 준비\\n- [ ] 코드 리팩토링"
+  - text: "#업무 #할일"
+  - heading "학습 노트" [level=3]
+  - text: 학습 2025년 8월 1일 오후 02:25
+  - button "편집":
+    - img
+  - button "삭제":
+    - img
+  - paragraph: "### JavaScript 학습\\n\\n```js\\nconst hello = () => {\\n console.log(\"Hello World!\");\\n}\\n```"
+  - text: "#javascript #코딩"
+- heading "새 메모 작성" [level=2]
+- button:
+  - img
+- text: 제목 *
+- textbox "제목 *": 테스트 메모 제목
+- text: 카테고리
+- combobox "카테고리":
+  - option "개인" [selected]
+  - option "업무"
+  - option "학습"
+  - option "아이디어"
+  - option "기타"
+- text: 내용 * (마크다운 편집 지원)
+- list:
+  - listitem:
+    - button "Add bold text (ctrl + b)":
+      - img
+  - listitem:
+    - button "Add italic text (ctrl + i)":
+      - img
+  - listitem:
+    - button "Add strikethrough text (ctrl + shift + x)":
+      - img
+  - listitem:
+    - button "Insert HR (ctrl + h)":
+      - img
+  - listitem:
+    - button "Insert title":
+      - img
+  - listitem
+  - listitem:
+    - button "Add a link (ctrl + l)":
+      - img
+  - listitem:
+    - button "Insert a quote (ctrl + q)":
+      - img
+  - listitem:
+    - button "Insert code (ctrl + j)":
+      - img
+  - listitem:
+    - button "Insert Code Block (ctrl + shift + j)":
+      - img
+  - listitem:
+    - button "Insert comment (ctrl + /)":
+      - img
+  - listitem:
+    - button "Add image (ctrl + k)":
+      - img
+  - listitem:
+    - button "Add table":
+      - img
+  - listitem
+  - listitem:
+    - button "Add unordered list (ctrl + shift + u)":
+      - img
+  - listitem:
+    - button "Add ordered list (ctrl + shift + o)":
+      - img
+  - listitem:
+    - button "Add checked list (ctrl + shift + c)":
+      - img
+  - listitem
+  - listitem:
+    - button "Open help":
+      - img
+- list:
+  - listitem:
+    - button "Edit code (ctrl + 7)":
+      - img
+  - listitem:
+    - button "Live code (ctrl + 8)":
+      - img
+  - listitem:
+    - button "Preview code (ctrl + 9)":
+      - img
+  - listitem
+  - listitem:
+    - button "Toggle fullscreen (ctrl + 0)":
+      - img
+- textbox
+- img
+- text: 태그
+- textbox "태그를 입력하고 Enter를 누르세요"
+- button "추가"
+- button "취소"
+- button "저장하기"
+- alert
+```

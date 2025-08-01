@@ -1,0 +1,464 @@
+<testsuites id="" name="" tests="18" failures="15" skipped="0" errors="0" time="247.360158">
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-01T06:18:15.005Z" hostname="chromium" tests="6" failures="5" skipped="0" time="132.359" errors="0">
+<testcase name="메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" classname="e2e\memo-creation.spec.ts" time="30.214">
+<failure message="memo-creation.spec.ts:11:7 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:11:7 › 메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다 ────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      24 |     // 5. 내용 입력 (MDEditor에 입력)
+      25 |     // MDEditor의 textarea 요소를 찾아서 입력
+    > 26 |     await page.locator('.w-md-editor-text-textarea').fill('# 테스트 내용\n\n이것은 테스트 메모입니다.')
+         |                                                      ^
+      27 |     
+      28 |     // 6. 태그 입력
+      29 |     await page.fill('input[placeholder*="태그를 입력하고"]', '테스트')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:26:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="30.327">
+<failure message="memo-creation.spec.ts:47:7 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:47:7 › 메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다 ──────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      50 |     
+      51 |     // 2. 내용만 입력하고 제목은 비움
+    > 52 |     await page.locator('.w-md-editor-text-textarea').fill('내용만 있는 메모')
+         |                                                      ^
+      53 |     
+      54 |     // 3. "저장하기" 버튼 클릭
+      55 |     await page.click('text=저장하기')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:52:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="3.823">
+</testcase>
+<testcase name="메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" classname="e2e\memo-creation.spec.ts" time="30.076">
+<failure message="memo-creation.spec.ts:87:7 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:87:7 › 메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다 ─────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      94 |     // 2. 일부 입력 수행
+      95 |     await page.fill('#title', '취소될 메모')
+    > 96 |     await page.locator('.w-md-editor-text-textarea').fill('취소될 내용')
+         |                                                      ^
+      97 |     
+      98 |     // 3. "취소" 버튼 클릭
+      99 |     await page.click('text=취소')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:96:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다" classname="e2e\memo-creation.spec.ts" time="7.704">
+<failure message="memo-creation.spec.ts:112:7 모달 외부 클릭 시 모달이 닫힌다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:112:7 › 메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다 ─────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).not.toBeVisible()
+
+    Locator: locator('text=새 메모 작성')
+    Expected: not visible
+    Received: visible
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('text=새 메모 작성')
+        8 × locator resolved to <h2 class="text-xl font-semibold text-gray-900">새 메모 작성</h2>
+          - unexpected value "visible"
+
+
+      121 |     
+      122 |     // 4. 모달이 닫혔는지 확인
+    > 123 |     await expect(page.locator('text=새 메모 작성')).not.toBeVisible()
+          |                                                    ^
+      124 |   })
+      125 |
+      126 |   test('태그 추가 및 제거 기능이 정상 작동한다', async ({ page }) => {
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:123:52
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다" classname="e2e\memo-creation.spec.ts" time="30.215">
+<failure message="memo-creation.spec.ts:126:7 태그 추가 및 제거 기능이 정상 작동한다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:126:7 › 메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다 ─────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      130 |     // 2. 필수 필드 입력
+      131 |     await page.fill('#title', '태그 테스트 메모')
+    > 132 |     await page.locator('.w-md-editor-text-textarea').fill('태그 테스트 내용')
+          |                                                      ^
+      133 |     
+      134 |     // 3. 첫 번째 태그 추가
+      135 |     await page.fill('input[placeholder*="태그를 입력하고"]', '태그1')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:132:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-01T06:18:15.005Z" hostname="firefox" tests="6" failures="5" skipped="0" time="135.99" errors="0">
+<testcase name="메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" classname="e2e\memo-creation.spec.ts" time="30.192">
+<failure message="memo-creation.spec.ts:11:7 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:11:7 › 메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다 ─────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      24 |     // 5. 내용 입력 (MDEditor에 입력)
+      25 |     // MDEditor의 textarea 요소를 찾아서 입력
+    > 26 |     await page.locator('.w-md-editor-text-textarea').fill('# 테스트 내용\n\n이것은 테스트 메모입니다.')
+         |                                                      ^
+      27 |     
+      28 |     // 6. 태그 입력
+      29 |     await page.fill('input[placeholder*="태그를 입력하고"]', '테스트')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:26:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="30.246">
+<failure message="memo-creation.spec.ts:47:7 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:47:7 › 메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다 ───────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      50 |     
+      51 |     // 2. 내용만 입력하고 제목은 비움
+    > 52 |     await page.locator('.w-md-editor-text-textarea').fill('내용만 있는 메모')
+         |                                                      ^
+      53 |     
+      54 |     // 3. "저장하기" 버튼 클릭
+      55 |     await page.click('text=저장하기')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:52:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="5.135">
+</testcase>
+<testcase name="메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" classname="e2e\memo-creation.spec.ts" time="30.192">
+<failure message="memo-creation.spec.ts:87:7 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:87:7 › 메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다 ──────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      94 |     // 2. 일부 입력 수행
+      95 |     await page.fill('#title', '취소될 메모')
+    > 96 |     await page.locator('.w-md-editor-text-textarea').fill('취소될 내용')
+         |                                                      ^
+      97 |     
+      98 |     // 3. "취소" 버튼 클릭
+      99 |     await page.click('text=취소')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:96:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다" classname="e2e\memo-creation.spec.ts" time="10.041">
+<failure message="memo-creation.spec.ts:112:7 모달 외부 클릭 시 모달이 닫힌다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:112:7 › 메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다 ──────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).not.toBeVisible()
+
+    Locator: locator('text=새 메모 작성')
+    Expected: not visible
+    Received: visible
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('text=새 메모 작성')
+        8 × locator resolved to <h2 class="text-xl font-semibold text-gray-900">새 메모 작성</h2>
+          - unexpected value "visible"
+
+
+      121 |     
+      122 |     // 4. 모달이 닫혔는지 확인
+    > 123 |     await expect(page.locator('text=새 메모 작성')).not.toBeVisible()
+          |                                                    ^
+      124 |   })
+      125 |
+      126 |   test('태그 추가 및 제거 기능이 정상 작동한다', async ({ page }) => {
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:123:52
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다" classname="e2e\memo-creation.spec.ts" time="30.184">
+<failure message="memo-creation.spec.ts:126:7 태그 추가 및 제거 기능이 정상 작동한다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:126:7 › 메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다 ──────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      130 |     // 2. 필수 필드 입력
+      131 |     await page.fill('#title', '태그 테스트 메모')
+    > 132 |     await page.locator('.w-md-editor-text-textarea').fill('태그 테스트 내용')
+          |                                                      ^
+      133 |     
+      134 |     // 3. 첫 번째 태그 추가
+      135 |     await page.fill('input[placeholder*="태그를 입력하고"]', '태그1')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:132:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-01T06:18:15.005Z" hostname="webkit" tests="6" failures="5" skipped="0" time="139.37" errors="0">
+<testcase name="메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" classname="e2e\memo-creation.spec.ts" time="30.084">
+<failure message="memo-creation.spec.ts:11:7 정상 케이스: 새 메모를 성공적으로 작성할 수 있다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:11:7 › 메모 생성 기능 › 정상 케이스: 새 메모를 성공적으로 작성할 수 있다 ──────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      24 |     // 5. 내용 입력 (MDEditor에 입력)
+      25 |     // MDEditor의 textarea 요소를 찾아서 입력
+    > 26 |     await page.locator('.w-md-editor-text-textarea').fill('# 테스트 내용\n\n이것은 테스트 메모입니다.')
+         |                                                      ^
+      27 |     
+      28 |     // 6. 태그 입력
+      29 |     await page.fill('input[placeholder*="태그를 입력하고"]', '테스트')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:26:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="30.129">
+<failure message="memo-creation.spec.ts:47:7 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:47:7 › 메모 생성 기능 › 비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다 ────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      50 |     
+      51 |     // 2. 내용만 입력하고 제목은 비움
+    > 52 |     await page.locator('.w-md-editor-text-textarea').fill('내용만 있는 메모')
+         |                                                      ^
+      53 |     
+      54 |     // 3. "저장하기" 버튼 클릭
+      55 |     await page.click('text=저장하기')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:52:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다" classname="e2e\memo-creation.spec.ts" time="6.97">
+</testcase>
+<testcase name="메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" classname="e2e\memo-creation.spec.ts" time="30.345">
+<failure message="memo-creation.spec.ts:87:7 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:87:7 › 메모 생성 기능 › 취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다 ───────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      94 |     // 2. 일부 입력 수행
+      95 |     await page.fill('#title', '취소될 메모')
+    > 96 |     await page.locator('.w-md-editor-text-textarea').fill('취소될 내용')
+         |                                                      ^
+      97 |     
+      98 |     // 3. "취소" 버튼 클릭
+      99 |     await page.click('text=취소')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:96:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다" classname="e2e\memo-creation.spec.ts" time="11.751">
+<failure message="memo-creation.spec.ts:112:7 모달 외부 클릭 시 모달이 닫힌다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:112:7 › 메모 생성 기능 › 모달 외부 클릭 시 모달이 닫힌다 ───────────────────────
+
+    Error: Timed out 5000ms waiting for expect(locator).not.toBeVisible()
+
+    Locator: locator('text=새 메모 작성')
+    Expected: not visible
+    Received: visible
+    Call log:
+      - Expect "not toBeVisible" with timeout 5000ms
+      - waiting for locator('text=새 메모 작성')
+        8 × locator resolved to <h2 class="text-xl font-semibold text-gray-900">새 메모 작성</h2>
+          - unexpected value "visible"
+
+
+      121 |     
+      122 |     // 4. 모달이 닫혔는지 확인
+    > 123 |     await expect(page.locator('text=새 메모 작성')).not.toBeVisible()
+          |                                                    ^
+      124 |   })
+      125 |
+      126 |   test('태그 추가 및 제거 기능이 정상 작동한다', async ({ page }) => {
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:123:52
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다" classname="e2e\memo-creation.spec.ts" time="30.091">
+<failure message="memo-creation.spec.ts:126:7 태그 추가 및 제거 기능이 정상 작동한다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:126:7 › 메모 생성 기능 › 태그 추가 및 제거 기능이 정상 작동한다 ───────────────────
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.fill: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.w-md-editor-text-textarea')
+
+
+      130 |     // 2. 필수 필드 입력
+      131 |     await page.fill('#title', '태그 테스트 메모')
+    > 132 |     await page.locator('.w-md-editor-text-textarea').fill('태그 테스트 내용')
+          |                                                      ^
+      133 |     
+      134 |     // 3. 첫 번째 태그 추가
+      135 |     await page.fill('input[placeholder*="태그를 입력하고"]', '태그1')
+        at C:\Users\masocampus\Desktop\memo-app\memo-app\tests\e2e\memo-creation.spec.ts:132:54
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,1095 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\playwright.config.ts",
+    "rootDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e\\memo-creation.spec.ts",
+      "file": "e2e/memo-creation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "메모 생성 기능",
+          "file": "e2e/memo-creation.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "정상 케이스: 새 메모를 성공적으로 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30214,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 26
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 24 |\u001b[39m     \u001b[90m// 5. 내용 입력 (MDEditor에 입력)\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[90m// MDEditor의 textarea 요소를 찾아서 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'# 테스트 내용\\n\\n이것은 테스트 메모입니다.'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m     \n \u001b[90m 28 |\u001b[39m     \u001b[90m// 6. 태그 입력\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'테스트'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:26:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:17.397Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-e8d8666e409cc7828bd2",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30327,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 52
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 2. 내용만 입력하고 제목은 비움\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'내용만 있는 메모'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m     \n \u001b[90m 54 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼 클릭\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=저장하기'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:52:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:17.423Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-4d1e5b542d67bb106310",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3823,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:52.765Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-462436736b3ad7384268",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30076,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 96
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 94 |\u001b[39m     \u001b[90m// 2. 일부 입력 수행\u001b[39m\n \u001b[90m 95 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'취소될 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 내용'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m     \n \u001b[90m 98 |\u001b[39m     \u001b[90m// 3. \"취소\" 버튼 클릭\u001b[39m\n \u001b[90m 99 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=취소'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:96:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:53.737Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-d25b3ce374a9de62d80f",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 87,
+              "column": 7
+            },
+            {
+              "title": "모달 외부 클릭 시 모달이 닫힌다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7704,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 52,
+                          "line": 123
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 52,
+                            "line": 123
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:18:57.155Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 52,
+                        "line": 123
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-53cb78bc0d0efa8dc26d",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 112,
+              "column": 7
+            },
+            {
+              "title": "태그 추가 및 제거 기능이 정상 작동한다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30215,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 132
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 130 |\u001b[39m     \u001b[90m// 2. 필수 필드 입력\u001b[39m\n \u001b[90m 131 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그 테스트 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 132 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'태그 테스트 내용'\u001b[39m)\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 133 |\u001b[39m     \n \u001b[90m 134 |\u001b[39m     \u001b[90m// 3. 첫 번째 태그 추가\u001b[39m\n \u001b[90m 135 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그1'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:132:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:07.139Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-675689368edf3d394b5b",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "정상 케이스: 새 메모를 성공적으로 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30192,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 26
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 24 |\u001b[39m     \u001b[90m// 5. 내용 입력 (MDEditor에 입력)\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[90m// MDEditor의 textarea 요소를 찾아서 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'# 테스트 내용\\n\\n이것은 테스트 메모입니다.'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m     \n \u001b[90m 28 |\u001b[39m     \u001b[90m// 6. 태그 입력\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'테스트'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:26:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:27.084Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-ee2c15cba0497b958c2d",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30246,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 52
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 2. 내용만 입력하고 제목은 비움\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'내용만 있는 메모'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m     \n \u001b[90m 54 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼 클릭\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=저장하기'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:52:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:19:40.826Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-9b839fa2eba501214f79",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5135,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:02.556Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-5f190673c766374cb373",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30192,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 96
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 94 |\u001b[39m     \u001b[90m// 2. 일부 입력 수행\u001b[39m\n \u001b[90m 95 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'취소될 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 내용'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m     \n \u001b[90m 98 |\u001b[39m     \u001b[90m// 3. \"취소\" 버튼 클릭\u001b[39m\n \u001b[90m 99 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=취소'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:96:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:08.957Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-3c0b05ec9bb4130567a1",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 87,
+              "column": 7
+            },
+            {
+              "title": "모달 외부 클릭 시 모달이 닫힌다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 10041,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 52,
+                          "line": 123
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 52,
+                            "line": 123
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:15.881Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 52,
+                        "line": 123
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-e2207b866362c8eefcea",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 112,
+              "column": 7
+            },
+            {
+              "title": "태그 추가 및 제거 기능이 정상 작동한다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30184,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 132
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 130 |\u001b[39m     \u001b[90m// 2. 필수 필드 입력\u001b[39m\n \u001b[90m 131 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그 테스트 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 132 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'태그 테스트 내용'\u001b[39m)\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 133 |\u001b[39m     \n \u001b[90m 134 |\u001b[39m     \u001b[90m// 3. 첫 번째 태그 추가\u001b[39m\n \u001b[90m 135 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그1'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:132:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:30.656Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-firefox\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-882b8d83625c2a040d79",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 126,
+              "column": 7
+            },
+            {
+              "title": "정상 케이스: 새 메모를 성공적으로 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30084,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 26
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 24 |\u001b[39m     \u001b[90m// 5. 내용 입력 (MDEditor에 입력)\u001b[39m\n \u001b[90m 25 |\u001b[39m     \u001b[90m// MDEditor의 textarea 요소를 찾아서 입력\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 26 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'# 테스트 내용\\n\\n이것은 테스트 메모입니다.'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 27 |\u001b[39m     \n \u001b[90m 28 |\u001b[39m     \u001b[90m// 6. 태그 입력\u001b[39m\n \u001b[90m 29 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'테스트'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:26:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:20:42.721Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-정상-케이스-새-메모를-성공적으로-작성할-수-있다-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-e168ee2181c3fac239b8",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 11,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 제목을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30129,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 52
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 50 |\u001b[39m     \n \u001b[90m 51 |\u001b[39m     \u001b[90m// 2. 내용만 입력하고 제목은 비움\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'내용만 있는 메모'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m     \n \u001b[90m 54 |\u001b[39m     \u001b[90m// 3. \"저장하기\" 버튼 클릭\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=저장하기'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:52:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:05.273Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-비정상-케이스-제목을-입력하지-않으면-오류-메시지가-표시된다-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-bd2ff4f908bd87306b96",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "비정상 케이스: 내용을 입력하지 않으면 오류 메시지가 표시된다",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6970,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:16.618Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-0bb6913b15fcd79e2284",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "취소 버튼 클릭 시 모달이 닫히고 메모가 생성되지 않는다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "timedOut",
+                      "duration": 30345,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 96
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 94 |\u001b[39m     \u001b[90m// 2. 일부 입력 수행\u001b[39m\n \u001b[90m 95 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'취소될 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'취소될 내용'\u001b[39m)\n \u001b[90m    |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m     \n \u001b[90m 98 |\u001b[39m     \u001b[90m// 3. \"취소\" 버튼 클릭\u001b[39m\n \u001b[90m 99 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'text=취소'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:96:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:23.721Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-취소-버튼-클릭-시-모달이-닫히고-메모가-생성되지-않는다-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-9f6391df520e73dd6db9",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 87,
+              "column": 7
+            },
+            {
+              "title": "모달 외부 클릭 시 모달이 닫힌다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11751,
+                      "error": {
+                        "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n",
+                        "stack": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 52,
+                          "line": 123
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 52,
+                            "line": 123
+                          },
+                          "message": "Error: \u001b[31mTimed out 5000ms waiting for \u001b[39m\u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mnot\u001b[2m.\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: locator('text=새 메모 작성')\nExpected: not visible\nReceived: visible\nCall log:\n\u001b[2m  - Expect \"not toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('text=새 메모 작성')\u001b[22m\n\u001b[2m    8 × locator resolved to <h2 class=\"text-xl font-semibold text-gray-900\">새 메모 작성</h2>\u001b[22m\n\u001b[2m      - unexpected value \"visible\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 121 |\u001b[39m     \n \u001b[90m 122 |\u001b[39m     \u001b[90m// 4. 모달이 닫혔는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 123 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'text=새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\n \u001b[90m     |\u001b[39m                                                    \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 124 |\u001b[39m   })\n \u001b[90m 125 |\u001b[39m\n \u001b[90m 126 |\u001b[39m   test(\u001b[32m'태그 추가 및 제거 기능이 정상 작동한다'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:123:52\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:38.053Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-모달-외부-클릭-시-모달이-닫힌다-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 52,
+                        "line": 123
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-512ded99b56a6242b697",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 112,
+              "column": 7
+            },
+            {
+              "title": "태그 추가 및 제거 기능이 정상 작동한다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 30091,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 54,
+                            "line": 132
+                          },
+                          "message": "Error: locator.fill: Test timeout of 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.w-md-editor-text-textarea')\u001b[22m\n\n\n\u001b[0m \u001b[90m 130 |\u001b[39m     \u001b[90m// 2. 필수 필드 입력\u001b[39m\n \u001b[90m 131 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#title'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그 테스트 메모'\u001b[39m)\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 132 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'.w-md-editor-text-textarea'\u001b[39m)\u001b[33m.\u001b[39mfill(\u001b[32m'태그 테스트 내용'\u001b[39m)\n \u001b[90m     |\u001b[39m                                                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 133 |\u001b[39m     \n \u001b[90m 134 |\u001b[39m     \u001b[90m// 3. 첫 번째 태그 추가\u001b[39m\n \u001b[90m 135 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'input[placeholder*=\"태그를 입력하고\"]'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'태그1'\u001b[39m)\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\tests\\e2e\\memo-creation.spec.ts:132:54\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:21:51.811Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-태그-추가-및-제거-기능이-정상-작동한다-webkit\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-4ac7d595b696e4d89f78",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 126,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-01T06:18:14.719Z",
+    "duration": 247360.15800000002,
+    "expected": 3,
+    "skipped": 0,
+    "unexpected": 15,
+    "flaky": 0
+  }
+}

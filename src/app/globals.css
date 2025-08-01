@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import '@uiw/react-md-editor/markdown-editor.css';
+@import '@uiw/react-markdown-preview/markdown.css';
 
 :root {
   --background: #ffffff;
@@ -38,4 +40,96 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* MDEditor 커스텀 스타일 */
+.markdown-content .w-md-editor {
+  background: transparent !important;
+}
+
+.markdown-content .w-md-editor-text-input,
+.markdown-content .w-md-editor-text {
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+}
+
+.markdown-content .wmde-markdown {
+  background: transparent !important;
+  color: #374151 !important;
+}
+
+.markdown-content .wmde-markdown h1,
+.markdown-content .wmde-markdown h2,
+.markdown-content .wmde-markdown h3,
+.markdown-content .wmde-markdown h4,
+.markdown-content .wmde-markdown h5,
+.markdown-content .wmde-markdown h6 {
+  color: #1f2937 !important;
+}
+
+.markdown-content .wmde-markdown p {
+  margin-bottom: 1rem !important;
+}
+
+.markdown-content .wmde-markdown pre {
+  background: #f3f4f6 !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+}
+
+.markdown-content .wmde-markdown code {
+  background: #f3f4f6 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+}
+
+/* 리스트 스타일 개선 */
+.markdown-content .wmde-markdown ul,
+.w-md-editor-preview ul {
+  list-style-type: disc !important;
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 1rem !important;
+  display: block !important;
+}
+
+.markdown-content .wmde-markdown ol,
+.w-md-editor-preview ol {
+  list-style-type: decimal !important;
+  margin-left: 1.5rem !important;
+  margin-bottom: 1rem !important;
+  padding-left: 1rem !important;
+  display: block !important;
+}
+
+.markdown-content .wmde-markdown li,
+.w-md-editor-preview li {
+  margin-bottom: 0.5rem !important;
+  line-height: 1.6 !important;
+  display: list-item !important;
+  margin-left: 0 !important;
+}
+
+.markdown-content .wmde-markdown ul ul,
+.w-md-editor-preview ul ul {
+  list-style-type: circle !important;
+  margin-top: 0.5rem !important;
+  margin-left: 1rem !important;
+}
+
+.markdown-content .wmde-markdown ul ul ul,
+.w-md-editor-preview ul ul ul {
+  list-style-type: square !important;
+}
+
+/* 전역 마크다운 리스트 스타일 */
+.w-md-editor-text ul,
+.w-md-editor-text ol {
+  margin-left: 2rem !important;
+  padding-left: 0 !important;
+}
+
+.w-md-editor-text li {
+  list-style: inherit !important;
+  display: list-item !important;
 }

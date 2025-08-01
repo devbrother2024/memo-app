@@ -5,6 +5,7 @@ import { useMemos } from '@/hooks/useMemos'
 import { Memo, MemoFormData } from '@/types/memo'
 import MemoList from '@/components/MemoList'
 import MemoForm from '@/components/MemoForm'
+import SupabaseTest from '@/components/SupabaseTest'
 
 export default function Home() {
   const {
@@ -23,21 +24,52 @@ export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingMemo, setEditingMemo] = useState<Memo | null>(null)
 
-  const handleCreateMemo = (formData: MemoFormData) => {
-    createMemo(formData)
-    setIsFormOpen(false)
+  const handleCreateMemo = async (formData: MemoFormData) => {
+    try {
+      const newMemo = await createMemo(formData)
+      if (newMemo) {
+        setIsFormOpen(false)
+      } else {
+        alert('메모 생성에 실패했습니다. 다시 시도해주세요.')
+      }
+    } catch (error) {
+      console.error('Failed to create memo:', error)
+      alert('메모 생성 중 오류가 발생했습니다.')
+    }
   }
 
-  const handleUpdateMemo = (formData: MemoFormData) => {
+  const handleUpdateMemo = async (formData: MemoFormData) => {
     if (editingMemo) {
-      updateMemo(editingMemo.id, formData)
-      setEditingMemo(null)
+      try {
+        const success = await updateMemo(editingMemo.id, formData)
+        if (success) {
+          setEditingMemo(null)
+          setIsFormOpen(false)
+        } else {
+          alert('메모 수정에 실패했습니다. 다시 시도해주세요.')
+        }
+      } catch (error) {
+        console.error('Failed to update memo:', error)
+        alert('메모 수정 중 오류가 발생했습니다.')
+      }
     }
   }
 
   const handleEditMemo = (memo: Memo) => {
     setEditingMemo(memo)
     setIsFormOpen(true)
+  }
+
+  const handleDeleteMemo = async (id: string) => {
+    try {
+      const success = await deleteMemo(id)
+      if (!success) {
+        alert('메모 삭제에 실패했습니다. 다시 시도해주세요.')
+      }
+    } catch (error) {
+      console.error('Failed to delete memo:', error)
+      alert('메모 삭제 중 오류가 발생했습니다.')
+    }
   }
 
   const handleCloseForm = () => {
@@ -84,6 +116,11 @@ export default function Home() {
 
       {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Supabase 연결 테스트 (임시) */}
+        <div className="mb-8">
+          <SupabaseTest />
+        </div>
+        
         <MemoList
           memos={memos}
           loading={loading}
@@ -92,7 +129,7 @@ export default function Home() {
           onSearchChange={searchMemos}
           onCategoryChange={filterByCategory}
           onEditMemo={handleEditMemo}
-          onDeleteMemo={deleteMemo}
+          onDeleteMemo={handleDeleteMemo}
           stats={stats}
         />
       </main>
