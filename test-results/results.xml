@@ -1,0 +1,98 @@
+<testsuites id="" name="" tests="3" failures="3" skipped="0" errors="0" time="19.005338">
+<testsuite name="e2e\create-memo.spec.ts" timestamp="2025-08-01T06:14:20.753Z" hostname="chromium" tests="1" failures="1" skipped="0" time="4.672" errors="0">
+<testcase name="새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다" classname="e2e\create-memo.spec.ts" time="4.672">
+<failure message="create-memo.spec.ts:4:7 사용자는 새로운 메모를 작성할 수 있다" type="FAILURE">
+<![CDATA[  [chromium] › e2e\create-memo.spec.ts:4:7 › 새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다 ───────────────────────
+
+    Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:
+        1) <div class="mt-4 flex items-center justify-between text-sm text-gray-600">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)
+        2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)
+
+    Call log:
+      - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })
+
+
+       8 |     // 기존 메모 개수 확인
+       9 |     const statsLocator = page.locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ });
+    > 10 |     const initialStatsText = await statsLocator.textContent();
+         |                                                 ^
+      11 |     const initialMemoCount = initialStatsText ? parseInt(initialStatsText.match(/[0-9]+/)[0], 10) : 0;
+      12 |
+      13 |     // 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\create-memo.spec.ts:10:49
+
+    Error Context: ..\test-results\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\create-memo.spec.ts" timestamp="2025-08-01T06:14:20.753Z" hostname="firefox" tests="1" failures="1" skipped="0" time="6.482" errors="0">
+<testcase name="새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다" classname="e2e\create-memo.spec.ts" time="6.482">
+<failure message="create-memo.spec.ts:4:7 사용자는 새로운 메모를 작성할 수 있다" type="FAILURE">
+<![CDATA[  [firefox] › e2e\create-memo.spec.ts:4:7 › 새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다 ────────────────────────
+
+    Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:
+        1) <div class="mt-4 flex items-center justify-between text-sm text-gray-600">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)
+        2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)
+
+    Call log:
+      - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })
+
+
+       8 |     // 기존 메모 개수 확인
+       9 |     const statsLocator = page.locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ });
+    > 10 |     const initialStatsText = await statsLocator.textContent();
+         |                                                 ^
+      11 |     const initialMemoCount = initialStatsText ? parseInt(initialStatsText.match(/[0-9]+/)[0], 10) : 0;
+      12 |
+      13 |     // 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\create-memo.spec.ts:10:49
+
+    Error Context: ..\test-results\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-firefox\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-firefox\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\create-memo.spec.ts" timestamp="2025-08-01T06:14:20.753Z" hostname="webkit" tests="1" failures="1" skipped="0" time="6.579" errors="0">
+<testcase name="새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다" classname="e2e\create-memo.spec.ts" time="6.579">
+<failure message="create-memo.spec.ts:4:7 사용자는 새로운 메모를 작성할 수 있다" type="FAILURE">
+<![CDATA[  [webkit] › e2e\create-memo.spec.ts:4:7 › 새 메모 작성 › 사용자는 새로운 메모를 작성할 수 있다 ─────────────────────────
+
+    Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:
+        1) <div class="mt-4 flex items-center justify-between text-sm text-gray-600">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)
+        2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)
+
+    Call log:
+      - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })
+
+
+       8 |     // 기존 메모 개수 확인
+       9 |     const statsLocator = page.locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ });
+    > 10 |     const initialStatsText = await statsLocator.textContent();
+         |                                                 ^
+      11 |     const initialMemoCount = initialStatsText ? parseInt(initialStatsText.match(/[0-9]+/)[0], 10) : 0;
+      12 |
+      13 |     // 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.
+        at C:\Users\masocampus\Desktop\memo-app\tests\e2e\create-memo.spec.ts:10:49
+
+    Error Context: ..\test-results\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-webkit\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-webkit\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
