@@ -1,14 +1,16 @@
 'use client'
 
 import { Memo, MEMO_CATEGORIES } from '@/types/memo'
+import MDEditor from '@uiw/react-md-editor'
 
 interface MemoItemProps {
   memo: Memo
   onEdit: (memo: Memo) => void
   onDelete: (id: string) => void
+  onView: (memo: Memo) => void
 }
 
-export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
+export default function MemoItem({ memo, onEdit, onDelete, onView }: MemoItemProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return date.toLocaleDateString('ko-KR', {
@@ -32,7 +34,10 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
   }
 
   return (
-    <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200">
+    <div 
+      className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+      onClick={() => onView(memo)}
+    >
       {/* 헤더 */}
       <div className="flex justify-between items-start mb-3">
         <div className="flex-1">
@@ -55,7 +60,10 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
         {/* 액션 버튼 */}
         <div className="flex gap-2 ml-4">
           <button
-            onClick={() => onEdit(memo)}
+            onClick={(e) => {
+              e.stopPropagation()
+              onEdit(memo)
+            }}
             className="p-2 text-gray-500 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
             title="편집"
           >
@@ -74,7 +82,8 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
             </svg>
           </button>
           <button
-            onClick={() => {
+            onClick={(e) => {
+              e.stopPropagation()
               if (window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
                 onDelete(memo.id)
               }
@@ -101,9 +110,12 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
 
       {/* 내용 */}
       <div className="mb-4">
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-          {memo.content}
-        </p>
+        <div className="text-gray-700 text-sm leading-relaxed line-clamp-3 prose prose-sm max-w-none">
+          <MDEditor.Markdown 
+            source={memo.content.length > 150 ? memo.content.substring(0, 150) + '...' : memo.content}
+            style={{ background: 'transparent' }}
+          />
+        </div>
       </div>
 
       {/* 태그 */}
