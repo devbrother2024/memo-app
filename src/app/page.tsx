@@ -1,10 +1,11 @@
-'use client'
+﻿'use client'
 
 import { useState } from 'react'
 import { useMemos } from '@/hooks/useMemos'
 import { Memo, MemoFormData } from '@/types/memo'
 import MemoList from '@/components/MemoList'
 import MemoForm from '@/components/MemoForm'
+import MemoViewerModal from '@/components/MemoViewerModal'
 
 export default function Home() {
   const {
@@ -23,6 +24,9 @@ export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingMemo, setEditingMemo] = useState<Memo | null>(null)
 
+  // 뷰어 모달 상태 추가
+  const [selectedMemo, setSelectedMemo] = useState<Memo | null>(null)
+
   const handleCreateMemo = (formData: MemoFormData) => {
     createMemo(formData)
     setIsFormOpen(false)
@@ -32,11 +36,13 @@ export default function Home() {
     if (editingMemo) {
       updateMemo(editingMemo.id, formData)
       setEditingMemo(null)
+      setIsFormOpen(false)
     }
   }
 
   const handleEditMemo = (memo: Memo) => {
     setEditingMemo(memo)
+    setSelectedMemo(null)
     setIsFormOpen(true)
   }
 
@@ -45,9 +51,21 @@ export default function Home() {
     setEditingMemo(null)
   }
 
+  const handleViewMemo = (memo: Memo) => {
+    setSelectedMemo(memo)
+  }
+
+  const handleCloseViewer = () => {
+    setSelectedMemo(null)
+  }
+
+  const handleDeleteFromViewer = (id: string) => {
+    deleteMemo(id)
+    setSelectedMemo(null)
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* 헤더 */}
       <header className="bg-white border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
@@ -59,7 +77,10 @@ export default function Home() {
 
             <div className="flex items-center space-x-4">
               <button
-                onClick={() => setIsFormOpen(true)}
+                onClick={() => {
+                  setEditingMemo(null);
+                  setIsFormOpen(true);
+                }}
                 className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-lg shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors"
               >
                 <svg
@@ -82,7 +103,6 @@ export default function Home() {
         </div>
       </header>
 
-      {/* 메인 콘텐츠 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <MemoList
           memos={memos}
@@ -93,17 +113,26 @@ export default function Home() {
           onCategoryChange={filterByCategory}
           onEditMemo={handleEditMemo}
           onDeleteMemo={deleteMemo}
+          onViewMemo={handleViewMemo}
           stats={stats}
         />
       </main>
 
-      {/* 모달 폼 */}
       <MemoForm
         isOpen={isFormOpen}
         onClose={handleCloseForm}
         onSubmit={editingMemo ? handleUpdateMemo : handleCreateMemo}
         editingMemo={editingMemo}
       />
+
+      {selectedMemo && (
+        <MemoViewerModal
+          memo={selectedMemo}
+          onClose={handleCloseViewer}
+          onEdit={handleEditMemo}
+          onDelete={handleDeleteFromViewer}
+        />
+      )}
     </div>
   )
 }
