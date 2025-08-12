@@ -1,10 +1,8 @@
 'use client'
 
 import { useState, useEffect, useCallback, useMemo } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import { Memo, MemoFormData } from '@/types/memo'
-import { localStorageUtils } from '@/utils/localStorage'
-import { seedSampleData } from '@/utils/seedData'
+import { storageAdapter } from '@/utils/storageAdapter'
 
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([])
@@ -14,56 +12,64 @@ export const useMemos = () => {
 
   // 메모 로드
   useEffect(() => {
-    setLoading(true)
-    try {
-      // 샘플 데이터 시딩 (기존 데이터가 없을 때만)
-      seedSampleData()
-      const loadedMemos = localStorageUtils.getMemos()
-      setMemos(loadedMemos)
-    } catch (error) {
-      console.error('Failed to load memos:', error)
-    } finally {
-      setLoading(false)
+    const loadMemos = async () => {
+      setLoading(true)
+      try {
+        const loadedMemos = await storageAdapter.getMemos()
+        setMemos(loadedMemos)
+        
+        // 사용 중인 스토리지 타입 로그
+        console.log(`Using ${storageAdapter.getStorageType()} for data storage`)
+      } catch (error) {
+        console.error('Failed to load memos:', error)
+      } finally {
+        setLoading(false)
+      }
     }
+
+    loadMemos()
   }, [])
 
   // 메모 생성
-  const createMemo = useCallback((formData: MemoFormData): Memo => {
-    const newMemo: Memo = {
-      id: uuidv4(),
-      ...formData,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
+  const createMemo = useCallback(async (formData: MemoFormData): Promise<Memo | null> => {
+    try {
+      const newMemo = await storageAdapter.addMemo(formData)
+      if (newMemo) {
+        setMemos(prev => [newMemo, ...prev])
+        return newMemo
+      }
+      return null
+    } catch (error) {
+      console.error('Failed to create memo:', error)
+      return null
     }
-
-    localStorageUtils.addMemo(newMemo)
-    setMemos(prev => [newMemo, ...prev])
-
-    return newMemo
   }, [])
 
   // 메모 업데이트
   const updateMemo = useCallback(
-    (id: string, formData: MemoFormData): void => {
-      const existingMemo = memos.find(memo => memo.id === id)
-      if (!existingMemo) return
-
-      const updatedMemo: Memo = {
-        ...existingMemo,
-        ...formData,
-        updatedAt: new Date().toISOString(),
+    async (id: string, formData: MemoFormData): Promise<void> => {
+      try {
+        const updatedMemo = await storageAdapter.updateMemo(id, formData)
+        if (updatedMemo) {
+          setMemos(prev => prev.map(memo => (memo.id === id ? updatedMemo : memo)))
+        }
+      } catch (error) {
+        console.error('Failed to update memo:', error)
       }
-
-      localStorageUtils.updateMemo(updatedMemo)
-      setMemos(prev => prev.map(memo => (memo.id === id ? updatedMemo : memo)))
     },
-    [memos]
+    []
   )
 
   // 메모 삭제
-  const deleteMemo = useCallback((id: string): void => {
-    localStorageUtils.deleteMemo(id)
-    setMemos(prev => prev.filter(memo => memo.id !== id))
+  const deleteMemo = useCallback(async (id: string): Promise<void> => {
+    try {
+      const success = await storageAdapter.deleteMemo(id)
+      if (success) {
+        setMemos(prev => prev.filter(memo => memo.id !== id))
+      }
+    } catch (error) {
+      console.error('Failed to delete memo:', error)
+    }
   }, [])
 
   // 메모 검색
@@ -108,11 +114,17 @@ export const useMemos = () => {
   }, [memos, selectedCategory, searchQuery])
 
   // 모든 메모 삭제
-  const clearAllMemos = useCallback((): void => {
-    localStorageUtils.clearMemos()
-    setMemos([])
-    setSearchQuery('')
-    setSelectedCategory('all')
+  const clearAllMemos = useCallback(async (): Promise<void> => {
+    try {
+      const success = await storageAdapter.clearMemos()
+      if (success) {
+        setMemos([])
+        setSearchQuery('')
+        setSelectedCategory('all')
+      }
+    } catch (error) {
+      console.error('Failed to clear all memos:', error)
+    }
   }, [])
 
   // 통계 정보

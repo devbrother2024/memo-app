@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+@import '@uiw/react-md-editor/markdown-editor.css';
+@import '@uiw/react-markdown-preview/markdown.css';
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

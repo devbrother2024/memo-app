@@ -1,0 +1,111 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - heading "📝 메모 앱" [level=1]
+  - button "새 메모":
+    - img
+    - text: 새 메모
+- main:
+  - img
+  - textbox "메모 검색..."
+  - combobox:
+    - option "전체 카테고리" [selected]
+    - option "개인 (0)"
+    - option "업무 (0)"
+    - option "학습 (0)"
+    - option "아이디어 (0)"
+    - option "기타 (0)"
+  - text: 총 0개의 메모
+  - img
+  - heading "아직 메모가 없습니다" [level=3]
+  - paragraph: 첫 번째 메모를 작성해보세요!
+- heading "새 메모 작성" [level=2]
+- button:
+  - img
+- text: 제목 *
+- textbox "제목 *"
+- text: 카테고리
+- combobox "카테고리":
+  - option "개인"
+  - option "업무" [selected]
+  - option "학습"
+  - option "아이디어"
+  - option "기타"
+- text: 내용 * (마크다운 지원)
+- list:
+  - listitem:
+    - button "Add bold text (ctrl + b)":
+      - img
+  - listitem:
+    - button "Add italic text (ctrl + i)":
+      - img
+  - listitem:
+    - button "Add strikethrough text (ctrl + shift + x)":
+      - img
+  - listitem:
+    - button "Insert HR (ctrl + h)":
+      - img
+  - listitem:
+    - button "Insert title":
+      - img
+  - listitem
+  - listitem:
+    - button "Add a link (ctrl + l)":
+      - img
+  - listitem:
+    - button "Insert a quote (ctrl + q)":
+      - img
+  - listitem:
+    - button "Insert code (ctrl + j)":
+      - img
+  - listitem:
+    - button "Insert Code Block (ctrl + shift + j)":
+      - img
+  - listitem:
+    - button "Insert comment (ctrl + /)":
+      - img
+  - listitem:
+    - button "Add image (ctrl + k)":
+      - img
+  - listitem:
+    - button "Add table":
+      - img
+  - listitem
+  - listitem:
+    - button "Add unordered list (ctrl + shift + u)":
+      - img
+  - listitem:
+    - button "Add ordered list (ctrl + shift + o)":
+      - img
+  - listitem:
+    - button "Add checked list (ctrl + shift + c)":
+      - img
+  - listitem
+  - listitem:
+    - button "Open help":
+      - img
+- list:
+  - listitem:
+    - button "Edit code (ctrl + 7)":
+      - img
+  - listitem:
+    - button "Live code (ctrl + 8)":
+      - img
+  - listitem:
+    - button "Preview code (ctrl + 9)":
+      - img
+  - listitem
+  - listitem:
+    - button "Toggle fullscreen (ctrl + 0)":
+      - img
+- code: 내용만 있는 메모
+- textbox: 내용만 있는 메모
+- paragraph: 내용만 있는 메모
+- text: 태그
+- textbox "태그를 입력하고 Enter를 누르세요"
+- button "추가"
+- button "취소"
+- button "저장하기"
+- alert
+```
