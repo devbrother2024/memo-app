@@ -1,0 +1,987 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\masocampus\\memo-app\\playwright.config.ts",
+    "rootDir": "C:/Users/masocampus/memo-app/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/masocampus/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/masocampus/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/masocampus/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/masocampus/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e\\memo-creation.spec.ts",
+      "file": "e2e/memo-creation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "메모 생성 기능",
+          "file": "e2e/memo-creation.spec.ts",
+          "line": 10,
+          "column": 6,
+          "specs": [
+            {
+              "title": "시나리오 1: 새 메모 생성 성공",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 9262,
+                      "error": {
+                        "message": "TypeError: page.getByHeading is not a function",
+                        "stack": "TypeError: page.getByHeading is not a function\n    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:33:23",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 23,
+                          "line": 33
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 31 |\u001b[39m     \n \u001b[90m 32 |\u001b[39m     \u001b[90m// 메모 작성 폼이 표시되는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[90m// 2. 제목 필드에 \"E2E 테스트 메모\" 입력\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'제목 *'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'E2E 테스트 메모'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 23,
+                            "line": 33
+                          },
+                          "message": "TypeError: page.getByHeading is not a function\n\n\u001b[0m \u001b[90m 31 |\u001b[39m     \n \u001b[90m 32 |\u001b[39m     \u001b[90m// 메모 작성 폼이 표시되는지 확인\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 33 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 34 |\u001b[39m\n \u001b[90m 35 |\u001b[39m     \u001b[90m// 2. 제목 필드에 \"E2E 테스트 메모\" 입력\u001b[39m\n \u001b[90m 36 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgetByRole(\u001b[32m'textbox'\u001b[39m\u001b[33m,\u001b[39m { name\u001b[33m:\u001b[39m \u001b[32m'제목 *'\u001b[39m })\u001b[33m.\u001b[39mfill(\u001b[32m'E2E 테스트 메모'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:33:23\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:08.543Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-시나리오-1-새-메모-생성-성공-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 23,
+                        "line": 33
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-4c3d6c99ca52090791cd",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 제목 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 12463,
+                      "error": {
+                        "message": "TypeError: page.getByHeading is not a function",
+                        "stack": "TypeError: page.getByHeading is not a function\n    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:111:23",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 23,
+                          "line": 111
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 109 |\u001b[39m     \u001b[90m// 실패 조건: 필수 필드가 비어있을 때 저장되지 않음\u001b[39m\n \u001b[90m 110 |\u001b[39m     \u001b[90m// 메모 작성 폼이 여전히 열려있어야 함\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m     \n \u001b[90m 113 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 114 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 23,
+                            "line": 111
+                          },
+                          "message": "TypeError: page.getByHeading is not a function\n\n\u001b[0m \u001b[90m 109 |\u001b[39m     \u001b[90m// 실패 조건: 필수 필드가 비어있을 때 저장되지 않음\u001b[39m\n \u001b[90m 110 |\u001b[39m     \u001b[90m// 메모 작성 폼이 여전히 열려있어야 함\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 111 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 112 |\u001b[39m     \n \u001b[90m 113 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 114 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:111:23\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:08.501Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---제목-없음-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 23,
+                        "line": 111
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-cd2ae960a604ae730f73",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 내용 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8368,
+                      "error": {
+                        "message": "TypeError: page.getByHeading is not a function",
+                        "stack": "TypeError: page.getByHeading is not a function\n    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:130:23",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 23,
+                          "line": 130
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 128 |\u001b[39m     \u001b[90m// 실패 조건: 필수 필드가 비어있을 때 저장되지 않음\u001b[39m\n \u001b[90m 129 |\u001b[39m     \u001b[90m// 메모 작성 폼이 여전히 열려있어야 함\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 130 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 131 |\u001b[39m     \n \u001b[90m 132 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 133 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 23,
+                            "line": 130
+                          },
+                          "message": "TypeError: page.getByHeading is not a function\n\n\u001b[0m \u001b[90m 128 |\u001b[39m     \u001b[90m// 실패 조건: 필수 필드가 비어있을 때 저장되지 않음\u001b[39m\n \u001b[90m 129 |\u001b[39m     \u001b[90m// 메모 작성 폼이 여전히 열려있어야 함\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 130 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 131 |\u001b[39m     \n \u001b[90m 132 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 133 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:130:23\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:25.348Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---내용-없음-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 23,
+                        "line": 130
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-51f2f1004eeeb1d205a2",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 117,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 메모 작성 취소 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 6605,
+                      "error": {
+                        "message": "TypeError: page.getByHeading is not a function",
+                        "stack": "TypeError: page.getByHeading is not a function\n    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:147:23",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 23,
+                          "line": 147
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 145 |\u001b[39m     \n \u001b[90m 146 |\u001b[39m     \u001b[90m// 메모 작성 폼이 닫힘\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 147 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 148 |\u001b[39m     \n \u001b[90m 149 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 150 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 23,
+                            "line": 147
+                          },
+                          "message": "TypeError: page.getByHeading is not a function\n\n\u001b[0m \u001b[90m 145 |\u001b[39m     \n \u001b[90m 146 |\u001b[39m     \u001b[90m// 메모 작성 폼이 닫힘\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 147 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByHeading(\u001b[32m'새 메모 작성'\u001b[39m))\u001b[33m.\u001b[39mnot\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 148 |\u001b[39m     \n \u001b[90m 149 |\u001b[39m     \u001b[90m// 메인 화면에 메모가 추가되지 않음\u001b[39m\n \u001b[90m 150 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'총 0개의 메모'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:147:23\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:28.469Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-시나리오-1-메모-작성-취소-기능-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 23,
+                        "line": 147
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-f5a26c0b584b28f1a01b",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 136,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 다중 태그 추가",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 11060,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:39.386Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-62bf8ef4add88ceada0c",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 마크다운 미리보기 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 10442,
+                      "error": {
+                        "message": "Error: expect.toBeVisible: Error: strict mode violation: getByText('제목') resolved to 4 elements:\n    1) <label for=\"title\" class=\"block text-sm font-medium text-gray-700 mb-2\">제목 *</label> aka getByText('제목 *', { exact: true })\n    2) <span class=\"token title important\">…</span> aka getByText('# 제목', { exact: true })\n    3) <textarea autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" autocapitalize=\"off\" class=\"w-md-editor-text-input \"># 제목↵↵**굵은 글씨**↵↵- 목록 항목 1↵- 목록 항목 2</textarea> aka locator('textarea')\n    4) <h1 id=\"제목\">…</h1> aka getByRole('heading', { name: '제목' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('제목')\u001b[22m\n",
+                        "stack": "Error: expect.toBeVisible: Error: strict mode violation: getByText('제목') resolved to 4 elements:\n    1) <label for=\"title\" class=\"block text-sm font-medium text-gray-700 mb-2\">제목 *</label> aka getByText('제목 *', { exact: true })\n    2) <span class=\"token title important\">…</span> aka getByText('# 제목', { exact: true })\n    3) <textarea autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" autocapitalize=\"off\" class=\"w-md-editor-text-input \"># 제목↵↵**굵은 글씨**↵↵- 목록 항목 1↵- 목록 항목 2</textarea> aka locator('textarea')\n    4) <h1 id=\"제목\">…</h1> aka getByRole('heading', { name: '제목' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('제목')\u001b[22m\n\n    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:195:40",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                          "column": 40,
+                          "line": 195
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 193 |\u001b[39m     \u001b[90m// 미리보기 영역에서 렌더링된 결과 확인\u001b[39m\n \u001b[90m 194 |\u001b[39m     \u001b[90m// (미리보기가 실시간으로 업데이트되는 경우)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 195 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'제목'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 196 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'strong'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'굵은 글씨'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 197 |\u001b[39m     \n \u001b[90m 198 |\u001b[39m     \u001b[90m// 저장\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                            "column": 40,
+                            "line": 195
+                          },
+                          "message": "Error: expect.toBeVisible: Error: strict mode violation: getByText('제목') resolved to 4 elements:\n    1) <label for=\"title\" class=\"block text-sm font-medium text-gray-700 mb-2\">제목 *</label> aka getByText('제목 *', { exact: true })\n    2) <span class=\"token title important\">…</span> aka getByText('# 제목', { exact: true })\n    3) <textarea autocorrect=\"off\" autocomplete=\"off\" spellcheck=\"false\" autocapitalize=\"off\" class=\"w-md-editor-text-input \"># 제목↵↵**굵은 글씨**↵↵- 목록 항목 1↵- 목록 항목 2</textarea> aka locator('textarea')\n    4) <h1 id=\"제목\">…</h1> aka getByRole('heading', { name: '제목' })\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('제목')\u001b[22m\n\n\n\u001b[0m \u001b[90m 193 |\u001b[39m     \u001b[90m// 미리보기 영역에서 렌더링된 결과 확인\u001b[39m\n \u001b[90m 194 |\u001b[39m     \u001b[90m// (미리보기가 실시간으로 업데이트되는 경우)\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 195 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[32m'제목'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 196 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'strong'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'굵은 글씨'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 197 |\u001b[39m     \n \u001b[90m 198 |\u001b[39m     \u001b[90m// 저장\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts:195:40\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:39.445Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\memo-app\\test-results\\e2e-memo-creation-메모-생성-기능-시나리오-1-마크다운-미리보기-기능-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\memo-app\\tests\\e2e\\memo-creation.spec.ts",
+                        "column": 40,
+                        "line": 195
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-7390e200f9b32b4e943e",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 181,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 새 메모 생성 성공",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:53.932Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-1b43eb84e4be7aa99e1e",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 제목 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 14,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:53.830Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-a1788d674da08a14269f",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 내용 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:55.996Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-92b5816d994967984894",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 117,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 메모 작성 취소 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:56.022Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-175b3f38bece1309d59e",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 136,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 다중 태그 추가",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:57.882Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-44c4aedb61d0f253bd69",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 마크다운 미리보기 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\firefox-1489\\firefox\\firefox.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:57.915Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-8de6696c3fc7add8a52e",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 181,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 새 메모 생성 성공",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 10,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:59.880Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-f7beb8852d7b138ab190",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 24,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 제목 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:39:59.920Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-faadf4de8038b466bc55",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 필수 필드 검증 - 내용 없음",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:40:01.782Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-4da31defe2982184567a",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 117,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 메모 작성 취소 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 15,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:40:01.807Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-600d1e65d7427ddd561d",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 136,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 다중 태그 추가",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 16,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 8,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:40:03.693Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-747acaa84053b9b54c55",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "시나리오 1: 마크다운 미리보기 기능",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 17,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 7,
+                      "error": {
+                        "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝",
+                        "stack": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                      },
+                      "errors": [
+                        {
+                          "message": "Error: browserType.launch: Executable doesn't exist at C:\\Users\\masocampus\\AppData\\Local\\ms-playwright\\webkit-2191\\Playwright.exe\n╔═════════════════════════════════════════════════════════════════════════╗\n║ Looks like Playwright Test or Playwright was just installed or updated. ║\n║ Please run the following command to download new browsers:              ║\n║                                                                         ║\n║     npx playwright install                                              ║\n║                                                                         ║\n║ <3 Playwright Team                                                      ║\n╚═════════════════════════════════════════════════════════════════════════╝"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-12T06:40:03.736Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5239e142664ca1bb539d-42c9534111e43cac8464",
+              "file": "e2e/memo-creation.spec.ts",
+              "line": 181,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-12T06:39:05.203Z",
+    "duration": 58615.343,
+    "expected": 1,
+    "skipped": 0,
+    "unexpected": 17,
+    "flaky": 0
+  }
+}

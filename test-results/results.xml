@@ -1,0 +1,331 @@
+<testsuites id="" name="" tests="18" failures="17" skipped="0" errors="0" time="58.615343">
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-12T06:39:05.987Z" hostname="chromium" tests="6" failures="5" skipped="0" time="58.2" errors="0">
+<testcase name="메모 생성 기능 › 시나리오 1: 새 메모 생성 성공" classname="e2e\memo-creation.spec.ts" time="9.262">
+<failure message="memo-creation.spec.ts:24:7 시나리오 1: 새 메모 생성 성공" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:24:7 › 메모 생성 기능 › 시나리오 1: 새 메모 생성 성공 ──────────────────────
+
+    TypeError: page.getByHeading is not a function
+
+      31 |     
+      32 |     // 메모 작성 폼이 표시되는지 확인
+    > 33 |     await expect(page.getByHeading('새 메모 작성')).toBeVisible();
+         |                       ^
+      34 |
+      35 |     // 2. 제목 필드에 "E2E 테스트 메모" 입력
+      36 |     await page.getByRole('textbox', { name: '제목 *' }).fill('E2E 테스트 메모');
+        at C:\Users\masocampus\memo-app\tests\e2e\memo-creation.spec.ts:33:23
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-시나리오-1-새-메모-생성-성공-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-시나리오-1-새-메모-생성-성공-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음" classname="e2e\memo-creation.spec.ts" time="12.463">
+<failure message="memo-creation.spec.ts:98:7 시나리오 1: 필수 필드 검증 - 제목 없음" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:98:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음 ────────────────
+
+    TypeError: page.getByHeading is not a function
+
+      109 |     // 실패 조건: 필수 필드가 비어있을 때 저장되지 않음
+      110 |     // 메모 작성 폼이 여전히 열려있어야 함
+    > 111 |     await expect(page.getByHeading('새 메모 작성')).toBeVisible();
+          |                       ^
+      112 |     
+      113 |     // 메인 화면에 메모가 추가되지 않음
+      114 |     await expect(page.getByText('총 0개의 메모')).toBeVisible();
+        at C:\Users\masocampus\memo-app\tests\e2e\memo-creation.spec.ts:111:23
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---제목-없음-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---제목-없음-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음" classname="e2e\memo-creation.spec.ts" time="8.368">
+<failure message="memo-creation.spec.ts:117:7 시나리오 1: 필수 필드 검증 - 내용 없음" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:117:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음 ───────────────
+
+    TypeError: page.getByHeading is not a function
+
+      128 |     // 실패 조건: 필수 필드가 비어있을 때 저장되지 않음
+      129 |     // 메모 작성 폼이 여전히 열려있어야 함
+    > 130 |     await expect(page.getByHeading('새 메모 작성')).toBeVisible();
+          |                       ^
+      131 |     
+      132 |     // 메인 화면에 메모가 추가되지 않음
+      133 |     await expect(page.getByText('총 0개의 메모')).toBeVisible();
+        at C:\Users\masocampus\memo-app\tests\e2e\memo-creation.spec.ts:130:23
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---내용-없음-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-시나리오-1-필수-필드-검증---내용-없음-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능" classname="e2e\memo-creation.spec.ts" time="6.605">
+<failure message="memo-creation.spec.ts:136:7 시나리오 1: 메모 작성 취소 기능" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:136:7 › 메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능 ────────────────────
+
+    TypeError: page.getByHeading is not a function
+
+      145 |     
+      146 |     // 메모 작성 폼이 닫힘
+    > 147 |     await expect(page.getByHeading('새 메모 작성')).not.toBeVisible();
+          |                       ^
+      148 |     
+      149 |     // 메인 화면에 메모가 추가되지 않음
+      150 |     await expect(page.getByText('총 0개의 메모')).toBeVisible();
+        at C:\Users\masocampus\memo-app\tests\e2e\memo-creation.spec.ts:147:23
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-시나리오-1-메모-작성-취소-기능-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-시나리오-1-메모-작성-취소-기능-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 다중 태그 추가" classname="e2e\memo-creation.spec.ts" time="11.06">
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능" classname="e2e\memo-creation.spec.ts" time="10.442">
+<failure message="memo-creation.spec.ts:181:7 시나리오 1: 마크다운 미리보기 기능" type="FAILURE">
+<![CDATA[  [chromium] › e2e\memo-creation.spec.ts:181:7 › 메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능 ───────────────────
+
+    Error: expect.toBeVisible: Error: strict mode violation: getByText('제목') resolved to 4 elements:
+        1) <label for="title" class="block text-sm font-medium text-gray-700 mb-2">제목 *</label> aka getByText('제목 *', { exact: true })
+        2) <span class="token title important">…</span> aka getByText('# 제목', { exact: true })
+        3) <textarea autocorrect="off" autocomplete="off" spellcheck="false" autocapitalize="off" class="w-md-editor-text-input "># 제목↵↵**굵은 글씨**↵↵- 목록 항목 1↵- 목록 항목 2</textarea> aka locator('textarea')
+        4) <h1 id="제목">…</h1> aka getByRole('heading', { name: '제목' })
+
+    Call log:
+      - Expect "toBeVisible" with timeout 5000ms
+      - waiting for getByText('제목')
+
+
+      193 |     // 미리보기 영역에서 렌더링된 결과 확인
+      194 |     // (미리보기가 실시간으로 업데이트되는 경우)
+    > 195 |     await expect(page.getByText('제목')).toBeVisible();
+          |                                        ^
+      196 |     await expect(page.locator('strong')).toContainText('굵은 글씨');
+      197 |     
+      198 |     // 저장
+        at C:\Users\masocampus\memo-app\tests\e2e\memo-creation.spec.ts:195:40
+
+    Error Context: ..\test-results\e2e-memo-creation-메모-생성-기능-시나리오-1-마크다운-미리보기-기능-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|e2e-memo-creation-메모-생성-기능-시나리오-1-마크다운-미리보기-기능-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-12T06:39:05.987Z" hostname="firefox" tests="6" failures="6" skipped="0" time="0.053" errors="0">
+<testcase name="메모 생성 기능 › 시나리오 1: 새 메모 생성 성공" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:24:7 시나리오 1: 새 메모 생성 성공" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:24:7 › 메모 생성 기능 › 시나리오 1: 새 메모 생성 성공 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음" classname="e2e\memo-creation.spec.ts" time="0.014">
+<failure message="memo-creation.spec.ts:98:7 시나리오 1: 필수 필드 검증 - 제목 없음" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:98:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음" classname="e2e\memo-creation.spec.ts" time="0.007">
+<failure message="memo-creation.spec.ts:117:7 시나리오 1: 필수 필드 검증 - 내용 없음" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:117:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:136:7 시나리오 1: 메모 작성 취소 기능" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:136:7 › 메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 다중 태그 추가" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:154:7 시나리오 1: 다중 태그 추가" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:154:7 › 메모 생성 기능 › 시나리오 1: 다중 태그 추가 ────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:181:7 시나리오 1: 마크다운 미리보기 기능" type="FAILURE">
+<![CDATA[  [firefox] › e2e\memo-creation.spec.ts:181:7 › 메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능 ────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\firefox-1489\firefox\firefox.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="e2e\memo-creation.spec.ts" timestamp="2025-08-12T06:39:05.987Z" hostname="webkit" tests="6" failures="6" skipped="0" time="0.048" errors="0">
+<testcase name="메모 생성 기능 › 시나리오 1: 새 메모 생성 성공" classname="e2e\memo-creation.spec.ts" time="0.01">
+<failure message="memo-creation.spec.ts:24:7 시나리오 1: 새 메모 생성 성공" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:24:7 › 메모 생성 기능 › 시나리오 1: 새 메모 생성 성공 ────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음" classname="e2e\memo-creation.spec.ts" time="0.007">
+<failure message="memo-creation.spec.ts:98:7 시나리오 1: 필수 필드 검증 - 제목 없음" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:98:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 제목 없음 ──────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:117:7 시나리오 1: 필수 필드 검증 - 내용 없음" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:117:7 › 메모 생성 기능 › 시나리오 1: 필수 필드 검증 - 내용 없음 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:136:7 시나리오 1: 메모 작성 취소 기능" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:136:7 › 메모 생성 기능 › 시나리오 1: 메모 작성 취소 기능 ──────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 다중 태그 추가" classname="e2e\memo-creation.spec.ts" time="0.008">
+<failure message="memo-creation.spec.ts:154:7 시나리오 1: 다중 태그 추가" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:154:7 › 메모 생성 기능 › 시나리오 1: 다중 태그 추가 ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+<testcase name="메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능" classname="e2e\memo-creation.spec.ts" time="0.007">
+<failure message="memo-creation.spec.ts:181:7 시나리오 1: 마크다운 미리보기 기능" type="FAILURE">
+<![CDATA[  [webkit] › e2e\memo-creation.spec.ts:181:7 › 메모 생성 기능 › 시나리오 1: 마크다운 미리보기 기능 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\masocampus\AppData\Local\ms-playwright\webkit-2191\Playwright.exe
+    ╔═════════════════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright Test or Playwright was just installed or updated. ║
+    ║ Please run the following command to download new browsers:              ║
+    ║                                                                         ║
+    ║     npx playwright install                                              ║
+    ║                                                                         ║
+    ║ <3 Playwright Team                                                      ║
+    ╚═════════════════════════════════════════════════════════════════════════╝
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>
