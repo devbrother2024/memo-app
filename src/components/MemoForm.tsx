@@ -12,7 +12,7 @@ import {
 interface MemoFormProps {
   isOpen: boolean
   onClose: () => void
-  onSubmit: (data: MemoFormData) => void
+  onSubmit: (data: MemoFormData) => Promise<void>
   editingMemo?: Memo | null
 }
 
@@ -50,13 +50,13 @@ export default function MemoForm({
     setTagInput('')
   }, [editingMemo, isOpen])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (!formData.title.trim() || !formData.content.trim()) {
       alert('제목과 내용을 모두 입력해주세요.')
       return
     }
-    onSubmit(formData)
+    await onSubmit(formData)
     onClose()
   }
 
@@ -183,14 +183,12 @@ export default function MemoForm({
                       content: value || '',
                     }))
                   }
-                  preview="live"
-                  hideToolbar={false}
-                  visibleDragBar={false}
+                  data-color-mode="light"
+                  height={400}
                   textareaProps={{
                     placeholder: '메모 내용을 마크다운으로 작성하세요...\n\n# 제목\n## 부제목\n- 리스트\n**굵게**\n*기울임*\n`코드`',
                     style: { fontSize: 14, lineHeight: 1.6 },
                   }}
-                  height={400}
                 />
               </div>
             </div>

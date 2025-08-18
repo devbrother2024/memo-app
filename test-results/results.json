@@ -1,0 +1,1065 @@
+{
+  "config": {
+    "configFile": "/Users/Taeyoung/Projects/ai-class/memo-app/playwright.config.ts",
+    "rootDir": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 5
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/Taeyoung/Projects/ai-class/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/Taeyoung/Projects/ai-class/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "/Users/Taeyoung/Projects/ai-class/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 5
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 5,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3001",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "memo-creation.spec.ts",
+      "file": "memo-creation.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "메모 생성 기능",
+          "file": "memo-creation.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3023,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:44.667Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-42ddef3d4a1109787909",
+              "file": "memo-creation.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2594,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:44.692Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-20296bb3a083c7c732fd",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "2.3 메모 작성 취소 (우선순위: Medium)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2631,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:44.636Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-463ddb5f615a5d2bfe30",
+              "file": "memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 3468,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:44.682Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-c2c362a4c46f000cb943",
+              "file": "memo-creation.spec.ts",
+              "line": 125,
+              "column": 7
+            },
+            {
+              "title": "태그 시스템 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 3116,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:44.685Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-367e215079c97740850e",
+              "file": "memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "마크다운 에디터 기본 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1819,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:47.539Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-44338a3e99cc2dbc0db9",
+              "file": "memo-creation.spec.ts",
+              "line": 194,
+              "column": 7
+            },
+            {
+              "title": "폼 필드 상호작용 및 접근성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1839,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:47.553Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-7ff387cb9ab8228a1bfb",
+              "file": "memo-creation.spec.ts",
+              "line": 251,
+              "column": 7
+            },
+            {
+              "title": "데이터 지속성 확인",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2702,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:47.949Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-ac02c09486dfcd1fc76c",
+              "file": "memo-creation.spec.ts",
+              "line": 274,
+              "column": 7
+            },
+            {
+              "title": "2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 3710,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:48.772Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-4971c44b61d057203e55",
+              "file": "memo-creation.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4625,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:49.005Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-e3128c46068759eaa86f",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "2.3 메모 작성 취소 (우선순위: Medium)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3935,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:49.803Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-d330b0f3ac179bbde8fe",
+              "file": "memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3581,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:49.823Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-e2bb9378627884738d22",
+              "file": "memo-creation.spec.ts",
+              "line": 125,
+              "column": 7
+            },
+            {
+              "title": "태그 시스템 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3909,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:54.333Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-3ab399a5a9106768f975",
+              "file": "memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "마크다운 에디터 기본 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 2672,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:53.282Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-ef49c437f3b7bf3befaa",
+              "file": "memo-creation.spec.ts",
+              "line": 194,
+              "column": 7
+            },
+            {
+              "title": "폼 필드 상호작용 및 접근성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2505,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:54.650Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-090c3c3f9c9baf670f51",
+              "file": "memo-creation.spec.ts",
+              "line": 251,
+              "column": 7
+            },
+            {
+              "title": "데이터 지속성 확인",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 4102,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:54.729Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-2ff47fb10903183d239a",
+              "file": "memo-creation.spec.ts",
+              "line": 274,
+              "column": 7
+            },
+            {
+              "title": "2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 3321,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:55.951Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-c113587a67cb9c31db13",
+              "file": "memo-creation.spec.ts",
+              "line": 13,
+              "column": 7
+            },
+            {
+              "title": "2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 2871,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:57.063Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-35516efc016f4dab7fad",
+              "file": "memo-creation.spec.ts",
+              "line": 76,
+              "column": 7
+            },
+            {
+              "title": "2.3 메모 작성 취소 (우선순위: Medium)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2566,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:58.322Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-2a1ae8e72f9367a57a48",
+              "file": "memo-creation.spec.ts",
+              "line": 98,
+              "column": 7
+            },
+            {
+              "title": "카테고리 선택 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 3,
+                      "status": "interrupted",
+                      "duration": 1360,
+                      "error": {
+                        "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16",
+                        "location": {
+                          "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                          "column": 16,
+                          "line": 6
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                            "column": 16,
+                            "line": 6
+                          },
+                          "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:59.765Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                        "column": 16,
+                        "line": 6
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-670801cf8c8d53092bd6",
+              "file": "memo-creation.spec.ts",
+              "line": 125,
+              "column": 7
+            },
+            {
+              "title": "태그 시스템 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 14,
+                      "parallelIndex": 0,
+                      "status": "interrupted",
+                      "duration": 949,
+                      "error": {
+                        "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16",
+                        "location": {
+                          "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                          "column": 16,
+                          "line": 6
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                            "column": 16,
+                            "line": 6
+                          },
+                          "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:07:00.044Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                        "column": 16,
+                        "line": 6
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-85e3f16ad0173fbaeb56",
+              "file": "memo-creation.spec.ts",
+              "line": 154,
+              "column": 7
+            },
+            {
+              "title": "마크다운 에디터 기본 기능",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "interrupted",
+                      "duration": 1778,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText(/총 \\d+개의 메모/)\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/총 \\d+개의 메모/)\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText(/총 \\d+개의 메모/)\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/총 \\d+개의 메모/)\u001b[22m\n\n    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:10:48",
+                        "location": {
+                          "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                          "column": 48,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/총 \\d+개의 메모/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                            "column": 48,
+                            "line": 10
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m()\u001b[22m\n\nLocator: getByText(/총 \\d+개의 메모/)\nExpected: visible\nReceived: <element(s) not found>\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText(/총 \\d+개의 메모/)\u001b[22m\n\n\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mgetByText(\u001b[35m/총 \\d+개의 메모/\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m   test(\u001b[32m'2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)'\u001b[39m\u001b[33m,\u001b[39m \u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:10:48\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:06:59.585Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                        "column": 48,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-762b51b153d9880db6a5",
+              "file": "memo-creation.spec.ts",
+              "line": 194,
+              "column": 7
+            },
+            {
+              "title": "폼 필드 상호작용 및 접근성",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 4,
+                      "status": "interrupted",
+                      "duration": 1145,
+                      "error": {
+                        "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16",
+                        "location": {
+                          "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                          "column": 16,
+                          "line": 6
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                            "column": 16,
+                            "line": 6
+                          },
+                          "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:07:00.225Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                        "column": 16,
+                        "line": 6
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-4286f363763c92e6f42c",
+              "file": "memo-creation.spec.ts",
+              "line": 251,
+              "column": 7
+            },
+            {
+              "title": "데이터 지속성 확인",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 2,
+                      "status": "interrupted",
+                      "duration": 222,
+                      "error": {
+                        "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n",
+                        "stack": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16",
+                        "location": {
+                          "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                          "column": 16,
+                          "line": 6
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                            "column": 16,
+                            "line": 6
+                          },
+                          "message": "Error: page.goto: Test ended.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3001/\", waiting until \"load\"\u001b[22m\n\n\n\u001b[0m \u001b[90m 4 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m 5 |\u001b[39m     \u001b[90m// 각 테스트 전에 메인 페이지로 이동\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 6 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m'http://localhost:3001'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m   |\u001b[39m                \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 7 |\u001b[39m     \n \u001b[90m 8 |\u001b[39m     \u001b[90m// 페이지가 완전히 로드될 때까지 대기\u001b[39m\n \u001b[90m 9 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'📝 메모 앱'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at /Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts:6:16\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-18T07:07:01.120Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/Users/Taeyoung/Projects/ai-class/memo-app/tests/e2e/memo-creation.spec.ts",
+                        "column": 16,
+                        "line": 6
+                      }
+                    }
+                  ],
+                  "status": "skipped"
+                }
+              ],
+              "id": "22f91d0e746a767c8c19-ace195314ba9614ff6a4",
+              "file": "memo-creation.spec.ts",
+              "line": 274,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-18T07:06:44.061Z",
+    "duration": 17412.322,
+    "expected": 19,
+    "skipped": 5,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

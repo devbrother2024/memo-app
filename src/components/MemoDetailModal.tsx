@@ -9,7 +9,7 @@ interface MemoDetailModalProps {
   isOpen: boolean
   onClose: () => void
   onEdit: (memo: Memo) => void
-  onDelete: (id: string) => void
+  onDelete: (id: string) => Promise<void>
 }
 
 export default function MemoDetailModal({
@@ -70,9 +70,9 @@ export default function MemoDetailModal({
     return colors[category as keyof typeof colors] || colors.other
   }
 
-  const handleDelete = () => {
+  const handleDelete = async () => {
     if (memo && window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
-      onDelete(memo.id)
+      await onDelete(memo.id)
       onClose()
     }
   }
