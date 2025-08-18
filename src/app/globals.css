@@ -39,3 +39,225 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* React MDEditor 스타일 */
+.w-md-editor {
+  background: #ffffff;
+}
+
+.w-md-editor.w-md-editor-dark {
+  background: #0a0a0a;
+}
+
+.w-md-editor .w-md-editor-toolbar {
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+}
+
+.w-md-editor.w-md-editor-dark .w-md-editor-toolbar {
+  border-bottom-color: #374151;
+  background: #1f2937;
+}
+
+.w-md-editor .w-md-editor-text-input,
+.w-md-editor .w-md-editor-text-textarea,
+.w-md-editor .w-md-editor-preview {
+  font-family: inherit !important;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.w-md-editor .w-md-editor-preview {
+  padding: 16px;
+}
+
+.w-md-editor .w-md-editor-preview h1,
+.w-md-editor .w-md-editor-preview h2,
+.w-md-editor .w-md-editor-preview h3,
+.w-md-editor .w-md-editor-preview h4,
+.w-md-editor .w-md-editor-preview h5,
+.w-md-editor .w-md-editor-preview h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+}
+
+.w-md-editor .w-md-editor-preview p {
+  margin-bottom: 1em;
+}
+
+.w-md-editor .w-md-editor-preview ul,
+.w-md-editor .w-md-editor-preview ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.w-md-editor .w-md-editor-preview blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #6b7280;
+}
+
+.w-md-editor .w-md-editor-preview code {
+  background: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+}
+
+.w-md-editor .w-md-editor-preview pre {
+  background: #f3f4f6;
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.w-md-editor .w-md-editor-preview pre code {
+  background: transparent;
+  padding: 0;
+}
+
+/* 마크다운 뷰어 스타일 (MemoDetailModal용) */
+.markdown-content {
+  font-family: inherit;
+  line-height: 1.6;
+  color: inherit;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.markdown-content h1 { font-size: 2em; }
+.markdown-content h2 { font-size: 1.5em; }
+.markdown-content h3 { font-size: 1.25em; }
+.markdown-content h4 { font-size: 1.1em; }
+
+.markdown-content p {
+  margin-bottom: 1em;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 1em;
+  padding-left: 1.5em;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25em;
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1em;
+  margin: 1em 0;
+  color: #6b7280;
+  font-style: italic;
+}
+
+.markdown-content code {
+  background: #f3f4f6;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: 'Courier New', monospace;
+}
+
+.markdown-content pre {
+  background: #f3f4f6;
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.markdown-content pre code {
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+  border: 1px solid #d1d5db;
+  padding: 0.5em;
+  text-align: left;
+}
+
+.markdown-content th {
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.markdown-content a {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: #1d4ed8;
+}
+
+.markdown-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
+.markdown-content hr {
+  border: none;
+  height: 1px;
+  background: #e5e7eb;
+  margin: 2em 0;
+}
+
+/* 다크모드 지원 */
+@media (prefers-color-scheme: dark) {
+  .markdown-content h1,
+  .markdown-content h2,
+  .markdown-content h3,
+  .markdown-content h4,
+  .markdown-content h5,
+  .markdown-content h6 {
+    color: #f3f4f6;
+  }
+  
+  .markdown-content code {
+    background: #374151;
+    color: #f3f4f6;
+  }
+  
+  .markdown-content pre {
+    background: #374151;
+  }
+  
+  .markdown-content th {
+    background: #374151;
+  }
+  
+  .markdown-content th,
+  .markdown-content td {
+    border-color: #4b5563;
+  }
+  
+  .markdown-content hr {
+    background: #4b5563;
+  }
+}
