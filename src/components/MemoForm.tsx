@@ -1,12 +1,16 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import dynamic from 'next/dynamic'
 import {
   Memo,
   MemoFormData,
   MEMO_CATEGORIES,
   DEFAULT_CATEGORIES,
 } from '@/types/memo'
+
+// React MDEditor를 동적으로 로드 (SSR 문제 방지)
+const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false })
 
 interface MemoFormProps {
   isOpen: boolean
@@ -51,10 +55,25 @@ export default function MemoForm({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!formData.title.trim() || !formData.content.trim()) {
-      alert('제목과 내용을 모두 입력해주세요.')
+    
+    // 제목 검증
+    if (!formData.title.trim()) {
+      alert('제목을 입력해주세요.')
       return
     }
+    
+    // 마크다운 내용 검증 (빈 마크다운 태그나 공백만 있는 경우도 체크)
+    const cleanContent = formData.content
+      ?.replace(/^\s*#+\s*$/gm, '') // 빈 헤딩 제거
+      ?.replace(/^\s*-\s*$/gm, '')  // 빈 리스트 제거
+      ?.replace(/^\s*\*\s*$/gm, '') // 빈 리스트 제거
+      ?.replace(/\s/g, '')          // 모든 공백 제거
+    
+    if (!cleanContent) {
+      alert('메모 내용을 입력해주세요.')
+      return
+    }
+    
     onSubmit(formData)
     onClose()
   }
@@ -171,25 +190,28 @@ export default function MemoForm({
             {/* 내용 */}
             <div>
               <label
-                htmlFor="content"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                내용 *
+                내용 * (마크다운 지원)
               </label>
-              <textarea
-                id="content"
-                value={formData.content}
-                onChange={e =>
-                  setFormData(prev => ({
-                    ...prev,
-                    content: e.target.value,
-                  }))
-                }
-                className="placeholder-gray-400 text-gray-400 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-                placeholder="메모 내용을 입력하세요"
-                rows={8}
-                required
-              />
+              <div className="border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-blue-500 transition-colors">
+                <MDEditor
+                  value={formData.content}
+                  onChange={(value) =>
+                    setFormData(prev => ({
+                      ...prev,
+                      content: value || '',
+                    }))
+                  }
+                  preview="live"
+                  textareaProps={{
+                    placeholder: '메모 내용을 입력하세요... (마크다운 문법 사용 가능)',
+                    required: true,
+                  }}
+                  data-color-mode="light"
+                  height={400}
+                />
+              </div>
             </div>
 
             {/* 태그 */}
