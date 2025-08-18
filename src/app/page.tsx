@@ -5,6 +5,7 @@ import { useMemos } from '@/hooks/useMemos'
 import { Memo, MemoFormData } from '@/types/memo'
 import MemoList from '@/components/MemoList'
 import MemoForm from '@/components/MemoForm'
+import MemoDetailModal from '@/components/MemoDetailModal'
 
 export default function Home() {
   const {
@@ -22,16 +23,26 @@ export default function Home() {
 
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingMemo, setEditingMemo] = useState<Memo | null>(null)
+  const [selectedMemo, setSelectedMemo] = useState<Memo | null>(null)
+  const [isDetailModalOpen, setIsDetailModalOpen] = useState(false)
 
-  const handleCreateMemo = (formData: MemoFormData) => {
-    createMemo(formData)
-    setIsFormOpen(false)
+  const handleCreateMemo = async (formData: MemoFormData) => {
+    const result = await createMemo(formData)
+    if (result) {
+      setIsFormOpen(false)
+    } else {
+      alert('메모 생성에 실패했습니다.')
+    }
   }
 
-  const handleUpdateMemo = (formData: MemoFormData) => {
+  const handleUpdateMemo = async (formData: MemoFormData) => {
     if (editingMemo) {
-      updateMemo(editingMemo.id, formData)
-      setEditingMemo(null)
+      const success = await updateMemo(editingMemo.id, formData)
+      if (success) {
+        setEditingMemo(null)
+      } else {
+        alert('메모 수정에 실패했습니다.')
+      }
     }
   }
 
@@ -43,6 +54,21 @@ export default function Home() {
   const handleCloseForm = () => {
     setIsFormOpen(false)
     setEditingMemo(null)
+  }
+
+  const handleViewMemo = (memo: Memo) => {
+    setSelectedMemo(memo)
+    setIsDetailModalOpen(true)
+  }
+
+  const handleCloseDetailModal = () => {
+    setIsDetailModalOpen(false)
+    setSelectedMemo(null)
+  }
+
+  const handleEditFromModal = (memo: Memo) => {
+    setEditingMemo(memo)
+    setIsFormOpen(true)
   }
 
   return (
@@ -92,7 +118,13 @@ export default function Home() {
           onSearchChange={searchMemos}
           onCategoryChange={filterByCategory}
           onEditMemo={handleEditMemo}
-          onDeleteMemo={deleteMemo}
+          onDeleteMemo={async (id: string) => {
+            const success = await deleteMemo(id)
+            if (!success) {
+              alert('메모 삭제에 실패했습니다.')
+            }
+          }}
+          onViewMemo={handleViewMemo}
           stats={stats}
         />
       </main>
@@ -103,6 +135,20 @@ export default function Home() {
         onClose={handleCloseForm}
         onSubmit={editingMemo ? handleUpdateMemo : handleCreateMemo}
         editingMemo={editingMemo}
+      />
+
+      {/* 메모 상세 보기 모달 */}
+      <MemoDetailModal
+        memo={selectedMemo}
+        isOpen={isDetailModalOpen}
+        onClose={handleCloseDetailModal}
+        onEdit={handleEditFromModal}
+        onDelete={async (id: string) => {
+          const success = await deleteMemo(id)
+          if (!success) {
+            alert('메모 삭제에 실패했습니다.')
+          }
+        }}
       />
     </div>
   )
