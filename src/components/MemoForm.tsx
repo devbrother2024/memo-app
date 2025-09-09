@@ -8,6 +8,7 @@ import {
   MEMO_CATEGORIES,
   DEFAULT_CATEGORIES,
 } from '@/types/memo'
+import { getTagColorPalette } from '@/utils/tagColor'
 
 // React MDEditor를 동적으로 로드 (SSR 문제 방지)
 const MDEditor = dynamic(() => import('@uiw/react-md-editor'), { ssr: false })
@@ -243,13 +244,13 @@ export default function MemoForm({
                   {formData.tags.map((tag, index) => (
                     <span
                       key={index}
-                      className="inline-flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 text-sm rounded-full"
+                      className={`inline-flex items-center gap-1 px-3 py-1 text-sm rounded-full border ${getTagColorPalette(tag)}`}
                     >
                       #{tag}
                       <button
                         type="button"
                         onClick={() => handleRemoveTag(tag)}
-                        className="text-blue-600 hover:text-blue-800"
+                        className="opacity-80 hover:opacity-100"
                       >
                         <svg
                           className="w-3 h-3"

@@ -1,6 +1,7 @@
 'use client'
 
 import { Memo, MEMO_CATEGORIES } from '@/types/memo'
+import { getTagColorPalette } from '@/utils/tagColor'
 
 interface MemoItemProps {
   memo: Memo
@@ -112,7 +113,7 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
           {memo.tags.map((tag, index) => (
             <span
               key={index}
-              className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded-md"
+              className={`px-2 py-1 text-xs rounded-md border ${getTagColorPalette(tag)}`}
             >
               #{tag}
             </span>

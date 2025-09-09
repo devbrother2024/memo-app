@@ -3,6 +3,7 @@
 import { useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
 import { Memo, MEMO_CATEGORIES } from '@/types/memo'
+import { getTagColorPalette } from '@/utils/tagColor'
 
 // MDEditor Preview를 동적으로 로드 (SSR 문제 방지)
 const MDEditorPreview = dynamic(() => import('@uiw/react-md-editor').then(mod => mod.default.Markdown), { ssr: false })
@@ -178,7 +179,7 @@ export default function MemoDetailModal({
               {memo.tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-blue-50 text-blue-700 text-sm rounded-full border border-blue-200"
+                  className={`px-3 py-1 text-sm rounded-full border ${getTagColorPalette(tag)}`}
                 >
                   #{tag}
                 </span>
