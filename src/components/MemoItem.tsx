@@ -114,9 +114,21 @@ export default function MemoItem({
 
       {/* 내용 */}
       <div className="mb-4">
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-          {memo.content}
-        </p>
+        <div className="text-gray-700 text-sm leading-relaxed line-clamp-3">
+          {memo.content
+            .replace(/^#{1,6}\s+/gm, '') // 제목 마크다운 제거
+            .replace(/\*\*(.*?)\*\*/g, '$1') // 굵은 글씨 마크다운 제거
+            .replace(/\*(.*?)\*/g, '$1') // 기울임 마크다운 제거
+            .replace(/`(.*?)`/g, '$1') // 인라인 코드 마크다운 제거
+            .replace(/^\s*[-*+]\s+/gm, '• ') // 목록 마크다운을 bullet으로 변경
+            .replace(/^\s*\d+\.\s+/gm, '• ') // 번호 목록을 bullet으로 변경
+            .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1') // 링크 마크다운 제거
+            .replace(/```[\s\S]*?```/g, '[코드 블록]') // 코드 블록을 텍스트로 변경
+            .replace(/\n{2,}/g, ' ') // 여러 줄바꿈을 공백으로 변경
+            .trim()
+            .substring(0, 150)}
+          {memo.content.length > 150 && '...'}
+        </div>
       </div>
 
       {/* 태그 */}

@@ -15,8 +15,40 @@ export const sampleMemos: Memo[] = [
   {
     id: '2',
     title: 'React 18 새로운 기능 학습',
-    content:
-      'React 18에서 새로 추가된 기능들을 학습해야 함:\n\n1. Concurrent Features\n2. Automatic Batching\n3. Suspense 개선사항\n4. useId Hook\n5. useDeferredValue Hook\n\n이번 주말에 공식 문서를 읽고 간단한 예제를 만들어보자.',
+    content: `# React 18 새로운 기능들
+
+React 18에서 새로 추가된 주요 기능들을 정리했습니다.
+
+## 🚀 주요 기능들
+
+### 1. Concurrent Features
+- **자동 배칭**: 여러 상태 업데이트를 하나로 묶어서 처리
+- **Suspense 개선**: 데이터 fetching과 코드 스플리팅에서 더 나은 사용자 경험
+
+### 2. 새로운 Hooks
+
+#### useId
+\`\`\`javascript
+import { useId } from 'react';
+
+function Component() {
+  const id = useId();
+  return <input id={id} />;
+}
+\`\`\`
+
+#### useDeferredValue
+\`\`\`javascript
+const deferredQuery = useDeferredValue(query);
+\`\`\`
+
+## 📅 학습 계획
+
+- [x] 공식 문서 읽기
+- [ ] 간단한 예제 프로젝트 만들기
+- [ ] 기존 프로젝트에 적용해보기
+
+> **참고**: 이번 주말에 집중적으로 학습 예정`,
     category: 'study',
     tags: ['React', '학습', '개발'],
     createdAt: new Date(Date.now() - 5 * 24 * 60 * 60 * 1000).toISOString(), // 5일 전
@@ -55,8 +87,45 @@ export const sampleMemos: Memo[] = [
   {
     id: '6',
     title: '성능 최적화 아이디어',
-    content:
-      '웹 애플리케이션 성능 최적화 방법들:\n\n프론트엔드:\n- 이미지 최적화 (WebP, lazy loading)\n- 코드 스플리팅\n- 번들 크기 최적화\n- 캐싱 전략\n\n백엔드:\n- 데이터베이스 쿼리 최적화\n- CDN 활용\n- 서버 사이드 렌더링\n- API 응답 캐싱\n\n모니터링:\n- Core Web Vitals 측정\n- 성능 예산 설정',
+    content: `# 웹 애플리케이션 성능 최적화 💡
+
+성능 최적화는 사용자 경험 향상의 핵심입니다.
+
+## 🎨 프론트엔드 최적화
+
+### 이미지 최적화
+- **WebP 포맷 사용**: 기존 JPEG/PNG 대비 25-35% 크기 감소
+- **Lazy Loading**: 뷰포트에 들어올 때만 로드
+- **Responsive Images**: 다양한 화면 크기에 맞는 이미지 제공
+
+### 코드 최적화
+\`\`\`javascript
+// 코드 스플리팅 예시
+const LazyComponent = lazy(() => import('./LazyComponent'));
+
+// 번들 분석
+npm run build -- --analyze
+\`\`\`
+
+## ⚡ 백엔드 최적화
+
+| 방법 | 효과 | 구현 난이도 |
+|------|------|-------------|
+| 쿼리 최적화 | 높음 | 중간 |
+| CDN 활용 | 높음 | 낮음 |
+| 캐싱 전략 | 매우 높음 | 높음 |
+
+## 📊 모니터링
+
+> **Core Web Vitals 지표**
+> - **LCP**: 2.5초 이하
+> - **FID**: 100ms 이하  
+> - **CLS**: 0.1 이하
+
+### 도구 추천
+- **Lighthouse**: 성능 측정
+- **Web Vitals**: 실제 사용자 데이터
+- **Bundle Analyzer**: 번들 크기 분석`,
     category: 'idea',
     tags: ['성능', '최적화', '웹개발'],
     createdAt: new Date(Date.now() - 20 * 24 * 60 * 60 * 1000).toISOString(), // 20일 전
@@ -70,6 +139,15 @@ export const seedSampleData = () => {
   if (existingMemos.length === 0) {
     localStorageUtils.saveMemos(sampleMemos)
     console.log('Sample data seeded successfully!')
+    return true
+  }
+  // 마크다운 예시가 없는 경우 업데이트
+  const hasMarkdownExamples = existingMemos.some(memo =>
+    memo.content.includes('#')
+  )
+  if (!hasMarkdownExamples) {
+    localStorageUtils.saveMemos(sampleMemos)
+    console.log('Sample data updated with markdown examples!')
     return true
   }
   return false

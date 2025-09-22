@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@import '@uiw/react-md-editor/markdown-editor.css';
 
 :root {
   --background: #ffffff;
@@ -38,4 +39,213 @@ body {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* MDEditor 마크다운 스타일링 개선 */
+.wmde-markdown {
+  background-color: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+}
+
+.wmde-markdown h1,
+.wmde-markdown h2,
+.wmde-markdown h3,
+.wmde-markdown h4,
+.wmde-markdown h5,
+.wmde-markdown h6 {
+  color: #1f2937 !important;
+  font-weight: 600 !important;
+  margin-top: 1.5em !important;
+  margin-bottom: 0.5em !important;
+  line-height: 1.25 !important;
+}
+
+.wmde-markdown h1 {
+  font-size: 2em !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 0.3em !important;
+}
+
+.wmde-markdown h2 {
+  font-size: 1.5em !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 0.3em !important;
+}
+
+.wmde-markdown h3 {
+  font-size: 1.25em !important;
+}
+
+.wmde-markdown h4 {
+  font-size: 1em !important;
+}
+
+.wmde-markdown h5 {
+  font-size: 0.875em !important;
+}
+
+.wmde-markdown h6 {
+  font-size: 0.85em !important;
+  color: #6b7280 !important;
+}
+
+.wmde-markdown p {
+  margin-bottom: 1em !important;
+  line-height: 1.625 !important;
+  color: #374151 !important;
+}
+
+.wmde-markdown ul,
+.wmde-markdown ol {
+  margin: 1em 0 !important;
+  padding-left: 1.5em !important;
+}
+
+.wmde-markdown ul li,
+.wmde-markdown ol li {
+  margin: 0.25em 0 !important;
+  line-height: 1.625 !important;
+  color: #374151 !important;
+}
+
+.wmde-markdown ul li {
+  list-style-type: disc !important;
+}
+
+.wmde-markdown ul ul li {
+  list-style-type: circle !important;
+}
+
+.wmde-markdown ul ul ul li {
+  list-style-type: square !important;
+}
+
+.wmde-markdown ol li {
+  list-style-type: decimal !important;
+}
+
+.wmde-markdown blockquote {
+  border-left: 4px solid #d1d5db !important;
+  padding-left: 1em !important;
+  margin: 1em 0 !important;
+  color: #6b7280 !important;
+  font-style: italic !important;
+}
+
+.wmde-markdown blockquote p {
+  color: inherit !important;
+}
+
+.wmde-markdown code {
+  background-color: #f3f4f6 !important;
+  color: #dc2626 !important;
+  padding: 0.125rem 0.25rem !important;
+  border-radius: 0.25rem !important;
+  font-size: 0.875em !important;
+  font-family:
+    ui-monospace, SFMono-Regular, 'SF Mono', Consolas, 'Liberation Mono', Menlo,
+    monospace !important;
+}
+
+.wmde-markdown pre {
+  background-color: #f9fafb !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  padding: 1rem !important;
+  overflow-x: auto !important;
+  margin: 1em 0 !important;
+}
+
+.wmde-markdown pre code {
+  background-color: transparent !important;
+  color: #1f2937 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  font-size: 0.875rem !important;
+}
+
+.wmde-markdown table {
+  border-collapse: collapse !important;
+  margin: 1em 0 !important;
+  width: 100% !important;
+}
+
+.wmde-markdown table th,
+.wmde-markdown table td {
+  border: 1px solid #d1d5db !important;
+  padding: 0.5rem 0.75rem !important;
+  text-align: left !important;
+}
+
+.wmde-markdown table th {
+  background-color: #f9fafb !important;
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+.wmde-markdown table td {
+  color: #374151 !important;
+}
+
+.wmde-markdown table tr:nth-child(even) {
+  background-color: #f9fafb !important;
+}
+
+.wmde-markdown a {
+  color: #2563eb !important;
+  text-decoration: underline !important;
+}
+
+.wmde-markdown a:hover {
+  color: #1d4ed8 !important;
+}
+
+.wmde-markdown strong {
+  font-weight: 600 !important;
+  color: #1f2937 !important;
+}
+
+.wmde-markdown em {
+  font-style: italic !important;
+}
+
+.wmde-markdown hr {
+  border: none !important;
+  border-top: 1px solid #d1d5db !important;
+  margin: 2em 0 !important;
+}
+
+.wmde-markdown img {
+  max-width: 100% !important;
+  height: auto !important;
+  border-radius: 0.5rem !important;
+  margin: 1em 0 !important;
+}
+
+/* MDEditor 편집기 스타일링 */
+.w-md-editor {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 0.5rem !important;
+}
+
+.w-md-editor-text-pre,
+.w-md-editor-text-input,
+.w-md-editor-text {
+  color: #1f2937 !important;
+  font-size: 14px !important;
+  line-height: 1.5 !important;
+}
+
+.w-md-editor-bar {
+  border-bottom: 1px solid #e5e7eb !important;
+}
+
+.w-md-editor-bar svg {
+  color: #6b7280 !important;
+}
+
+.w-md-editor-bar button:hover svg {
+  color: #374151 !important;
 }

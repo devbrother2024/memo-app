@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import MDEditor from '@uiw/react-md-editor'
 import { Memo, MEMO_CATEGORIES } from '@/types/memo'
 
 interface MemoDetailModalProps {
@@ -146,10 +147,16 @@ export default function MemoDetailModal({
 
         {/* 내용 */}
         <div className="p-6">
-          <div className="prose max-w-none">
-            <div className="text-gray-700 leading-relaxed whitespace-pre-wrap">
-              {memo.content}
-            </div>
+          <div className="prose prose-slate max-w-none" data-color-mode="light">
+            <MDEditor.Markdown
+              source={memo.content}
+              style={{
+                whiteSpace: 'pre-wrap',
+                backgroundColor: 'transparent',
+                padding: '0',
+              }}
+              data-color-mode="light"
+            />
           </div>
 
           {/* 태그 */}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import MDEditor from '@uiw/react-md-editor'
 import {
   Memo,
   MemoFormData,
@@ -170,26 +171,32 @@ export default function MemoForm({
 
             {/* 내용 */}
             <div>
-              <label
-                htmlFor="content"
-                className="block text-sm font-medium text-gray-700 mb-2"
-              >
-                내용 *
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                내용 * (마크다운 지원)
               </label>
-              <textarea
-                id="content"
-                value={formData.content}
-                onChange={e =>
-                  setFormData(prev => ({
-                    ...prev,
-                    content: e.target.value,
-                  }))
-                }
-                className="placeholder-gray-400 text-gray-400 w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
-                placeholder="메모 내용을 입력하세요"
-                rows={8}
-                required
-              />
+              <div data-color-mode="light">
+                <MDEditor
+                  value={formData.content}
+                  onChange={val =>
+                    setFormData(prev => ({
+                      ...prev,
+                      content: val || '',
+                    }))
+                  }
+                  preview="edit"
+                  height={300}
+                  data-color-mode="light"
+                  textareaProps={{
+                    placeholder:
+                      '마크다운으로 메모 내용을 작성하세요...\n\n예시:\n# 제목\n\n**굵은 글씨**\n\n- 목록 항목\n- 또 다른 항목\n\n```javascript\nconst hello = "world";\n```',
+                    style: {
+                      fontSize: 14,
+                      fontFamily:
+                        'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+                    },
+                  }}
+                />
+              </div>
             </div>
 
             {/* 태그 */}
