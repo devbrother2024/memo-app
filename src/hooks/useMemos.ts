@@ -1,10 +1,13 @@
 'use client'
 
 import { useState, useEffect, useCallback, useMemo } from 'react'
-import { v4 as uuidv4 } from 'uuid'
 import { Memo, MemoFormData } from '@/types/memo'
-import { localStorageUtils } from '@/utils/localStorage'
-import { seedSampleData } from '@/utils/seedData'
+import {
+  listMemos,
+  createMemoAction,
+  updateMemoAction,
+  deleteMemoAction,
+} from '@/app/actions/memoActions'
 
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([])
@@ -14,55 +17,45 @@ export const useMemos = () => {
 
   // 메모 로드
   useEffect(() => {
-    setLoading(true)
-    try {
-      // 샘플 데이터 시딩 (기존 데이터가 없을 때만)
-      seedSampleData()
-      const loadedMemos = localStorageUtils.getMemos()
-      setMemos(loadedMemos)
-    } catch (error) {
-      console.error('Failed to load memos:', error)
-    } finally {
-      setLoading(false)
+    let mounted = true
+    ;(async () => {
+      setLoading(true)
+      try {
+        const loaded = await listMemos()
+        if (mounted) setMemos(loaded)
+      } catch (error) {
+        console.error('Failed to load memos:', error)
+      } finally {
+        if (mounted) setLoading(false)
+      }
+    })()
+    return () => {
+      mounted = false
     }
   }, [])
 
   // 메모 생성
-  const createMemo = useCallback((formData: MemoFormData): Memo => {
-    const newMemo: Memo = {
-      id: uuidv4(),
-      ...formData,
-      createdAt: new Date().toISOString(),
-      updatedAt: new Date().toISOString(),
-    }
-
-    localStorageUtils.addMemo(newMemo)
-    setMemos(prev => [newMemo, ...prev])
-
-    return newMemo
-  }, [])
+  const createMemo = useCallback(
+    async (formData: MemoFormData): Promise<Memo> => {
+      const created = await createMemoAction(formData)
+      setMemos(prev => [created, ...prev])
+      return created
+    },
+    []
+  )
 
   // 메모 업데이트
   const updateMemo = useCallback(
-    (id: string, formData: MemoFormData): void => {
-      const existingMemo = memos.find(memo => memo.id === id)
-      if (!existingMemo) return
-
-      const updatedMemo: Memo = {
-        ...existingMemo,
-        ...formData,
-        updatedAt: new Date().toISOString(),
-      }
-
-      localStorageUtils.updateMemo(updatedMemo)
-      setMemos(prev => prev.map(memo => (memo.id === id ? updatedMemo : memo)))
+    async (id: string, formData: MemoFormData): Promise<void> => {
+      const updated = await updateMemoAction(id, formData)
+      setMemos(prev => prev.map(memo => (memo.id === id ? updated : memo)))
     },
-    [memos]
+    []
   )
 
   // 메모 삭제
-  const deleteMemo = useCallback((id: string): void => {
-    localStorageUtils.deleteMemo(id)
+  const deleteMemo = useCallback(async (id: string): Promise<void> => {
+    await deleteMemoAction(id)
     setMemos(prev => prev.filter(memo => memo.id !== id))
   }, [])
 
@@ -153,6 +146,8 @@ export const useMemos = () => {
     filterByCategory,
 
     // 유틸리티
-    clearAllMemos,
+    clearAllMemos: () => {
+      console.warn('clearAllMemos is not supported with Supabase backend.')
+    },
   }
 }

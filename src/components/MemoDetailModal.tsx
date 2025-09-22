@@ -94,8 +94,14 @@ export default function MemoDetailModal({
     clearError()
     setShowSummary(true)
 
+    // 기존 AI 요약이 있으면 바로 표시
+    if (memo.aiSummary && !summary) {
+      setSummary(memo.aiSummary)
+      return
+    }
+
     if (!summary) {
-      const result = await summarizeMemo(memo.content)
+      const result = await summarizeMemo(memo.content, memo.id)
       if (result) {
         setSummary(result)
       }
