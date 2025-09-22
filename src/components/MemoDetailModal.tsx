@@ -11,6 +11,7 @@ interface MemoDetailModalProps {
   onClose: () => void
   onEdit: (memo: Memo) => void
   onDelete: (id: string) => void
+  onUpdateSummary: (id: string, summary: string) => Promise<void>
 }
 
 export default function MemoDetailModal({
@@ -19,6 +20,7 @@ export default function MemoDetailModal({
   onClose,
   onEdit,
   onDelete,
+  onUpdateSummary,
 }: MemoDetailModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
   const [summary, setSummary] = useState<string | null>(null)
@@ -104,6 +106,8 @@ export default function MemoDetailModal({
       const result = await summarizeMemo(memo.content, memo.id)
       if (result) {
         setSummary(result)
+        // 상위 컴포넌트의 메모 상태도 업데이트
+        await onUpdateSummary(memo.id, result)
       }
     }
   }

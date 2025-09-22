@@ -17,6 +17,7 @@ export default function Home() {
     createMemo,
     updateMemo,
     deleteMemo,
+    updateMemoSummary,
     searchMemos,
     filterByCategory,
   } = useMemos()
@@ -131,6 +132,7 @@ export default function Home() {
         onClose={handleCloseDetailModal}
         onEdit={handleEditFromModal}
         onDelete={deleteMemo}
+        onUpdateSummary={updateMemoSummary}
       />
     </div>
   )

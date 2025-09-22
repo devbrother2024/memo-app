@@ -131,6 +131,31 @@ export default function MemoItem({
         </div>
       </div>
 
+      {/* AI 요약 */}
+      {memo.aiSummary && (
+        <div className="mb-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-center gap-2 mb-2">
+            <svg
+              className="w-4 h-4 text-blue-600"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 10V3L4 14h7v7l9-11h-7z"
+              />
+            </svg>
+            <span className="text-xs font-medium text-blue-700">AI 요약</span>
+          </div>
+          <p className="text-xs text-blue-800 leading-relaxed line-clamp-2">
+            {memo.aiSummary}
+          </p>
+        </div>
+      )}
+
       {/* 태그 */}
       {memo.tags.length > 0 && (
         <div className="flex gap-2 flex-wrap">

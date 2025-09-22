@@ -45,20 +45,6 @@ export const useMemoSummarize = () => {
       }
 
       const { summary } = data as SummarizeResponse
-
-      // 메모 ID가 제공되면 DB에 요약 결과 저장
-      if (memoId && summary) {
-        try {
-          const { updateMemoSummaryAction } = await import(
-            '@/app/actions/memoActions'
-          )
-          await updateMemoSummaryAction(memoId, summary)
-        } catch (updateError) {
-          console.error('Failed to save summary to database:', updateError)
-          // 요약은 성공했지만 DB 저장에 실패한 경우, 요약 결과는 반환
-        }
-      }
-
       return summary
     } catch (err) {
       const errorMessage =

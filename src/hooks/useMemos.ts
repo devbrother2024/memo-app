@@ -7,6 +7,7 @@ import {
   createMemoAction,
   updateMemoAction,
   deleteMemoAction,
+  updateMemoSummaryAction,
 } from '@/app/actions/memoActions'
 
 export const useMemos = () => {
@@ -77,6 +78,19 @@ export const useMemos = () => {
     [memos]
   )
 
+  // 메모 요약 업데이트
+  const updateMemoSummary = useCallback(
+    async (id: string, summary: string): Promise<void> => {
+      await updateMemoSummaryAction(id, summary)
+      setMemos(prev =>
+        prev.map(memo =>
+          memo.id === id ? { ...memo, aiSummary: summary } : memo
+        )
+      )
+    },
+    []
+  )
+
   // 필터링된 메모 목록
   const filteredMemos = useMemo(() => {
     let filtered = memos
@@ -102,10 +116,7 @@ export const useMemos = () => {
 
   // 모든 메모 삭제
   const clearAllMemos = useCallback((): void => {
-    localStorageUtils.clearMemos()
-    setMemos([])
-    setSearchQuery('')
-    setSelectedCategory('all')
+    console.warn('clearAllMemos is not supported with Supabase backend.')
   }, [])
 
   // 통계 정보
@@ -140,14 +151,13 @@ export const useMemos = () => {
     updateMemo,
     deleteMemo,
     getMemoById,
+    updateMemoSummary,
 
     // 필터링 & 검색
     searchMemos,
     filterByCategory,
 
     // 유틸리티
-    clearAllMemos: () => {
-      console.warn('clearAllMemos is not supported with Supabase backend.')
-    },
+    clearAllMemos,
   }
 }
