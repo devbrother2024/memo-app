@@ -12,6 +12,7 @@ interface MemoListProps {
   onCategoryChange: (category: string) => void
   onEditMemo: (memo: Memo) => void
   onDeleteMemo: (id: string) => void
+  onViewMemo: (memo: Memo) => void
   stats: {
     total: number
     filtered: number
@@ -28,6 +29,7 @@ export default function MemoList({
   onCategoryChange,
   onEditMemo,
   onDeleteMemo,
+  onViewMemo,
   stats,
 }: MemoListProps) {
   if (loading) {
@@ -153,6 +155,7 @@ export default function MemoList({
               memo={memo}
               onEdit={onEditMemo}
               onDelete={onDeleteMemo}
+              onView={onViewMemo}
             />
           ))}
         </div>
