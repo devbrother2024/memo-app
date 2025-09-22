@@ -13,6 +13,9 @@ LocalStorage 기반의 완전한 CRUD 기능을 갖춘 메모 앱으로, MCP 연
 - 📱 반응형 디자인 (모바일, 태블릿, 데스크톱)
 - 💾 LocalStorage 기반 데이터 저장 (오프라인 지원)
 - 🎨 모던한 UI/UX with Tailwind CSS
+- 📝 마크다운 편집기 및 실시간 프리뷰
+- 🤖 **AI 메모 요약 기능 (Google Gemini 2.0 Flash)**
+- 👁️ 메모 상세 뷰어 모달
 
 ## 🛠 기술 스택
 
@@ -22,22 +25,32 @@ LocalStorage 기반의 완전한 CRUD 기능을 갖춘 메모 앱으로, MCP 연
 - **Storage**: LocalStorage
 - **State Management**: React Hooks (useState, useEffect, useMemo)
 - **Package Manager**: npm
+- **Markdown**: React MDEditor (@uiw/react-md-editor)
+- **AI Integration**: Google Gemini API (@google/genai)
 
 ## 📦 설치 및 실행
 
-### 1. 의존성 설치
+### 1. 환경 변수 설정
+
+```bash
+# .env.local 파일 생성 후 Google Gemini API 키 설정
+cp .env.example .env.local
+# GEMINI_API_KEY에 실제 API 키 입력
+```
+
+### 2. 의존성 설치
 
 ```bash
 npm install
 ```
 
-### 2. 개발 서버 실행
+### 3. 개발 서버 실행
 
 ```bash
-npm run dev
+npm dev
 ```
 
-### 3. 브라우저 접속
+### 4. 브라우저 접속
 
 ```
 http://localhost:3000
@@ -71,16 +84,27 @@ memo-app/
 ### MemoItem
 
 - 개별 메모를 카드 형태로 표시
+- 클릭하여 상세 뷰어 모달 열기
 - 편집/삭제 액션 버튼
 - 카테고리 배지 및 태그 표시
-- 날짜 포맷팅 및 텍스트 클램핑
+- 날짜 포맷팅 및 마크다운 텍스트 클램핑
 
 ### MemoForm
 
 - 메모 생성/편집을 위한 모달 폼
+- **마크다운 편집기 (MDEditor) 통합**
+- 실시간 마크다운 프리뷰
 - 제목, 내용, 카테고리, 태그 입력
 - 태그 추가/제거 기능
 - 폼 검증 및 에러 처리
+
+### MemoDetailModal
+
+- **메모 상세 보기 전용 모달**
+- **AI 요약 기능 (Google Gemini 2.0 Flash)**
+- 마크다운 렌더링된 내용 표시
+- 편집/삭제 액션 버튼
+- ESC 키 및 배경 클릭으로 닫기
 
 ### MemoList
 
@@ -155,6 +179,25 @@ const {
   stats, // 통계 정보
 } = useMemos()
 ```
+
+### AI 메모 요약 기능
+
+```typescript
+// useMemoSummarize 훅 사용 예시
+const { summarizeMemo, isLoading, error } = useMemoSummarize()
+
+// 메모 요약 실행
+const summary = await summarizeMemo(memo.content)
+if (summary) {
+  console.log('요약 결과:', summary)
+}
+```
+
+**Google Gemini API 키 설정**:
+
+1. [Google AI Studio](https://makersuite.google.com/app/apikey)에서 API 키 발급
+2. `.env.local` 파일에 `GEMINI_API_KEY` 설정
+3. 메모 상세 모달에서 ⚡ 버튼 클릭하여 요약 실행
 
 ### LocalStorage 직접 조작
 
