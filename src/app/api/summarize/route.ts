@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { GoogleGenAI } from '@google/genai'
+import OpenAI from 'openai'
 
 export async function POST(request: NextRequest) {
   try {
@@ -12,16 +12,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    const apiKey = process.env.GEMINI_API_KEY
+    const apiKey = process.env.OPENAI_API_KEY
     if (!apiKey) {
       return NextResponse.json(
-        { error: 'Gemini API 키가 설정되지 않았습니다.' },
+        { error: 'OpenAI API 키가 설정되지 않았습니다.' },
         { status: 500 }
       )
     }
 
-    // Google Gemini AI 클라이언트 초기화
-    const genAI = new GoogleGenAI({
+    // OpenAI 클라이언트 초기화
+    const openai = new OpenAI({
       apiKey: apiKey,
     })
 
@@ -33,19 +33,21 @@ ${content}
 
 요약:`
 
-    // Gemini 2.0 Flash 모델로 콘텐츠 생성
-    const response = await genAI.models.generateContent({
-      model: 'gemini-2.0-flash-001',
-      contents: prompt,
-      config: {
-        maxOutputTokens: 200,
-        temperature: 0.3,
-        topK: 40,
-        topP: 0.95,
-      },
+    // GPT-4o-mini 모델로 콘텐츠 생성
+    const response = await openai.chat.completions.create({
+      model: 'gpt-4o-mini',
+      messages: [
+        {
+          role: 'user',
+          content: prompt,
+        },
+      ],
+      max_tokens: 200,
+      temperature: 0.3,
+      top_p: 0.95,
     })
 
-    const summary = response.candidates?.[0]?.content?.parts?.[0]?.text
+    const summary = response.choices[0]?.message?.content
 
     if (!summary) {
       return NextResponse.json(
