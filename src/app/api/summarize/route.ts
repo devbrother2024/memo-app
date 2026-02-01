@@ -35,7 +35,7 @@ ${content}
 
     // Gemini 2.0 Flash 모델로 콘텐츠 생성
     const response = await genAI.models.generateContent({
-      model: 'gemini-2.0-flash-001',
+      model: 'gemini-2.5-flash-lite',
       contents: prompt,
       config: {
         maxOutputTokens: 200,
