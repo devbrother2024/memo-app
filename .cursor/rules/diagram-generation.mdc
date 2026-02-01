@@ -1,4 +1,5 @@
 ---
+description: 다이어그램, 아키텍처, 플로우차트, 시각화, 구조도, 시퀀스, ERD, UML 생성 요청 시 적용. Mermaid 문법으로 docs/ 경로에 저장하는 규칙.
 alwaysApply: false
 ---
 
