@@ -1,6 +1,10 @@
 ---
-description:
+description: E2E 테스트 생성, Playwright 테스트 작성, 테스트 시나리오 자동화, 브라우저 테스트 실행 요청 시 적용
 globs:
+  - tests/e2e/**/*.ts
+  - tests/e2e/**/*.spec.ts
+  - "**/*.spec.ts"
+  - "**/page-objects/**/*.ts"
 alwaysApply: false
 ---
 
