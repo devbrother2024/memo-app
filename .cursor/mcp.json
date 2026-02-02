@@ -5,10 +5,10 @@
       "args": [
         "-y",
         "@supabase/mcp-server-supabase@0.4.5",
-        "--project-ref=<project-ref>"
+        "--project-ref=wrfnfetdcvyxumxyllip"
       ],
       "env": {
-        "SUPABASE_ACCESS_TOKEN": "<personal-access-token>"
+        "SUPABASE_ACCESS_TOKEN": "sbp_ebf3de729eb432a17eb4cd45ecdd335cdc6d7e9f"
       }
     },
     "playwright-mcp": {
@@ -16,8 +16,7 @@
       "args": ["@playwright/mcp@0.0.32"]
     },
     "context7": {
-      "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp"]
+      "url": "https://mcp.context7.com/mcp"
     }
   }
 }
