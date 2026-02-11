@@ -1,0 +1,66 @@
+<testsuites id="" name="" tests="24" failures="0" skipped="5" errors="0" time="17.412322">
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-18T07:06:44.113Z" hostname="chromium" tests="8" failures="0" skipped="0" time="21.192" errors="0">
+<testcase name="메모 생성 기능 › 2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)" classname="memo-creation.spec.ts" time="3.023">
+</testcase>
+<testcase name="메모 생성 기능 › 2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)" classname="memo-creation.spec.ts" time="2.594">
+</testcase>
+<testcase name="메모 생성 기능 › 2.3 메모 작성 취소 (우선순위: Medium)" classname="memo-creation.spec.ts" time="2.631">
+</testcase>
+<testcase name="메모 생성 기능 › 카테고리 선택 기능" classname="memo-creation.spec.ts" time="3.468">
+</testcase>
+<testcase name="메모 생성 기능 › 태그 시스템 기능" classname="memo-creation.spec.ts" time="3.116">
+</testcase>
+<testcase name="메모 생성 기능 › 마크다운 에디터 기본 기능" classname="memo-creation.spec.ts" time="1.819">
+</testcase>
+<testcase name="메모 생성 기능 › 폼 필드 상호작용 및 접근성" classname="memo-creation.spec.ts" time="1.839">
+</testcase>
+<testcase name="메모 생성 기능 › 데이터 지속성 확인" classname="memo-creation.spec.ts" time="2.702">
+</testcase>
+</testsuite>
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-18T07:06:44.113Z" hostname="firefox" tests="8" failures="0" skipped="0" time="29.039" errors="0">
+<testcase name="메모 생성 기능 › 2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)" classname="memo-creation.spec.ts" time="3.71">
+</testcase>
+<testcase name="메모 생성 기능 › 2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)" classname="memo-creation.spec.ts" time="4.625">
+</testcase>
+<testcase name="메모 생성 기능 › 2.3 메모 작성 취소 (우선순위: Medium)" classname="memo-creation.spec.ts" time="3.935">
+</testcase>
+<testcase name="메모 생성 기능 › 카테고리 선택 기능" classname="memo-creation.spec.ts" time="3.581">
+</testcase>
+<testcase name="메모 생성 기능 › 태그 시스템 기능" classname="memo-creation.spec.ts" time="3.909">
+</testcase>
+<testcase name="메모 생성 기능 › 마크다운 에디터 기본 기능" classname="memo-creation.spec.ts" time="2.672">
+</testcase>
+<testcase name="메모 생성 기능 › 폼 필드 상호작용 및 접근성" classname="memo-creation.spec.ts" time="2.505">
+</testcase>
+<testcase name="메모 생성 기능 › 데이터 지속성 확인" classname="memo-creation.spec.ts" time="4.102">
+</testcase>
+</testsuite>
+<testsuite name="memo-creation.spec.ts" timestamp="2025-08-18T07:06:44.113Z" hostname="webkit" tests="8" failures="0" skipped="5" time="14.212" errors="0">
+<testcase name="메모 생성 기능 › 2.1 새 메모 작성 - 성공 케이스 (우선순위: Critical)" classname="memo-creation.spec.ts" time="3.321">
+</testcase>
+<testcase name="메모 생성 기능 › 2.2 새 메모 작성 - 필수 필드 누락 (우선순위: High)" classname="memo-creation.spec.ts" time="2.871">
+</testcase>
+<testcase name="메모 생성 기능 › 2.3 메모 작성 취소 (우선순위: Medium)" classname="memo-creation.spec.ts" time="2.566">
+</testcase>
+<testcase name="메모 생성 기능 › 카테고리 선택 기능" classname="memo-creation.spec.ts" time="1.36">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="메모 생성 기능 › 태그 시스템 기능" classname="memo-creation.spec.ts" time="0.949">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="메모 생성 기능 › 마크다운 에디터 기본 기능" classname="memo-creation.spec.ts" time="1.778">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="메모 생성 기능 › 폼 필드 상호작용 및 접근성" classname="memo-creation.spec.ts" time="1.145">
+<skipped>
+</skipped>
+</testcase>
+<testcase name="메모 생성 기능 › 데이터 지속성 확인" classname="memo-creation.spec.ts" time="0.222">
+<skipped>
+</skipped>
+</testcase>
+</testsuite>
+</testsuites>
