@@ -1,7 +1,9 @@
 'use client'
 
+import { useState } from 'react'
 import { Memo, MEMO_CATEGORIES, DEFAULT_CATEGORIES } from '@/types/memo'
 import MemoItem from './MemoItem'
+import MemoViewer from './MemoViewer'
 
 interface MemoListProps {
   memos: Memo[]
@@ -30,6 +32,27 @@ export default function MemoList({
   onDeleteMemo,
   stats,
 }: MemoListProps) {
+  const [viewerState, setViewerState] = useState<{
+    isOpen: boolean
+    selectedMemo: Memo | null
+  }>({
+    isOpen: false,
+    selectedMemo: null,
+  })
+
+  const handleViewMemo = (memo: Memo) => {
+    setViewerState({
+      isOpen: true,
+      selectedMemo: memo,
+    })
+  }
+
+  const handleCloseViewer = () => {
+    setViewerState({
+      isOpen: false,
+      selectedMemo: null,
+    })
+  }
   if (loading) {
     return (
       <div className="flex items-center justify-center py-12">
@@ -153,9 +176,21 @@ export default function MemoList({
               memo={memo}
               onEdit={onEditMemo}
               onDelete={onDeleteMemo}
+              onView={handleViewMemo}
             />
           ))}
         </div>
+      )}
+
+      {/* 메모 뷰어 */}
+      {viewerState.selectedMemo && (
+        <MemoViewer
+          memo={viewerState.selectedMemo}
+          isOpen={viewerState.isOpen}
+          onClose={handleCloseViewer}
+          onEdit={onEditMemo}
+          onDelete={onDeleteMemo}
+        />
       )}
     </div>
   )
