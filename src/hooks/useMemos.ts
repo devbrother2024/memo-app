@@ -3,8 +3,7 @@
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { v4 as uuidv4 } from 'uuid'
 import { Memo, MemoFormData } from '@/types/memo'
-import { localStorageUtils } from '@/utils/localStorage'
-import { seedSampleData } from '@/utils/seedData'
+import { supabaseService } from '@/utils/supabaseService'
 
 export const useMemos = () => {
   const [memos, setMemos] = useState<Memo[]>([])
@@ -14,21 +13,23 @@ export const useMemos = () => {
 
   // 메모 로드
   useEffect(() => {
-    setLoading(true)
-    try {
-      // 샘플 데이터 시딩 (기존 데이터가 없을 때만)
-      seedSampleData()
-      const loadedMemos = localStorageUtils.getMemos()
-      setMemos(loadedMemos)
-    } catch (error) {
-      console.error('Failed to load memos:', error)
-    } finally {
-      setLoading(false)
+    const loadMemos = async () => {
+      setLoading(true)
+      try {
+        const loadedMemos = await supabaseService.getMemos()
+        setMemos(loadedMemos)
+      } catch (error) {
+        console.error('Failed to load memos:', error)
+      } finally {
+        setLoading(false)
+      }
     }
+
+    loadMemos()
   }, [])
 
   // 메모 생성
-  const createMemo = useCallback((formData: MemoFormData): Memo => {
+  const createMemo = useCallback(async (formData: MemoFormData): Promise<Memo> => {
     const newMemo: Memo = {
       id: uuidv4(),
       ...formData,
@@ -36,15 +37,19 @@ export const useMemos = () => {
       updatedAt: new Date().toISOString(),
     }
 
-    localStorageUtils.addMemo(newMemo)
-    setMemos(prev => [newMemo, ...prev])
-
-    return newMemo
+    try {
+      const createdMemo = await supabaseService.addMemo(newMemo)
+      setMemos(prev => [createdMemo, ...prev])
+      return createdMemo
+    } catch (error) {
+      console.error('Failed to create memo:', error)
+      throw error
+    }
   }, [])
 
   // 메모 업데이트
   const updateMemo = useCallback(
-    (id: string, formData: MemoFormData): void => {
+    async (id: string, formData: MemoFormData): Promise<void> => {
       const existingMemo = memos.find(memo => memo.id === id)
       if (!existingMemo) return
 
@@ -54,16 +59,26 @@ export const useMemos = () => {
         updatedAt: new Date().toISOString(),
       }
 
-      localStorageUtils.updateMemo(updatedMemo)
-      setMemos(prev => prev.map(memo => (memo.id === id ? updatedMemo : memo)))
+      try {
+        await supabaseService.updateMemo(updatedMemo)
+        setMemos(prev => prev.map(memo => (memo.id === id ? updatedMemo : memo)))
+      } catch (error) {
+        console.error('Failed to update memo:', error)
+        throw error
+      }
     },
     [memos]
   )
 
   // 메모 삭제
-  const deleteMemo = useCallback((id: string): void => {
-    localStorageUtils.deleteMemo(id)
-    setMemos(prev => prev.filter(memo => memo.id !== id))
+  const deleteMemo = useCallback(async (id: string): Promise<void> => {
+    try {
+      await supabaseService.deleteMemo(id)
+      setMemos(prev => prev.filter(memo => memo.id !== id))
+    } catch (error) {
+      console.error('Failed to delete memo:', error)
+      throw error
+    }
   }, [])
 
   // 메모 검색
@@ -78,10 +93,16 @@ export const useMemos = () => {
 
   // 특정 메모 가져오기
   const getMemoById = useCallback(
-    (id: string): Memo | undefined => {
-      return memos.find(memo => memo.id === id)
+    async (id: string): Promise<Memo | null> => {
+      try {
+        const memo = await supabaseService.getMemoById(id)
+        return memo
+      } catch (error) {
+        console.error('Failed to get memo by id:', error)
+        return null
+      }
     },
-    [memos]
+    []
   )
 
   // 필터링된 메모 목록
@@ -108,11 +129,16 @@ export const useMemos = () => {
   }, [memos, selectedCategory, searchQuery])
 
   // 모든 메모 삭제
-  const clearAllMemos = useCallback((): void => {
-    localStorageUtils.clearMemos()
-    setMemos([])
-    setSearchQuery('')
-    setSelectedCategory('all')
+  const clearAllMemos = useCallback(async (): Promise<void> => {
+    try {
+      await supabaseService.clearMemos()
+      setMemos([])
+      setSearchQuery('')
+      setSelectedCategory('all')
+    } catch (error) {
+      console.error('Failed to clear all memos:', error)
+      throw error
+    }
   }, [])
 
   // 통계 정보

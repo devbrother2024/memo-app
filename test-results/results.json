@@ -1,0 +1,321 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\masocampus\\Desktop\\memo-app\\playwright.config.ts",
+    "rootDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 2
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "test-results/results.xml"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "C:/Users/masocampus/Desktop/memo-app/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 2
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/masocampus/Desktop/memo-app/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.54.1",
+    "workers": 2,
+    "webServer": {
+      "command": "npm run dev",
+      "url": "http://localhost:3000",
+      "reuseExistingServer": true
+    }
+  },
+  "suites": [
+    {
+      "title": "e2e\\create-memo.spec.ts",
+      "file": "e2e/create-memo.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "새 메모 작성",
+          "file": "e2e/create-memo.spec.ts",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "사용자는 새로운 메모를 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4672,
+                      "error": {
+                        "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n",
+                        "stack": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                          "column": 49,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                            "column": 49,
+                            "line": 10
+                          },
+                          "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:14:22.925Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                        "column": 49,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8724cab8ac325ec217a5-123f0a9d43e12b373600",
+              "file": "e2e/create-memo.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "사용자는 새로운 메모를 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "firefox",
+                  "projectName": "firefox",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 6482,
+                      "error": {
+                        "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n",
+                        "stack": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                          "column": 49,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                            "column": 49,
+                            "line": 10
+                          },
+                          "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:14:22.970Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-firefox\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                        "column": 49,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8724cab8ac325ec217a5-c298e8afaf0a7d8bcd14",
+              "file": "e2e/create-memo.spec.ts",
+              "line": 4,
+              "column": 7
+            },
+            {
+              "title": "사용자는 새로운 메모를 작성할 수 있다",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "webkit",
+                  "projectName": "webkit",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 6579,
+                      "error": {
+                        "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n",
+                        "stack": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49",
+                        "location": {
+                          "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                          "column": 49,
+                          "line": 10
+                        },
+                        "snippet": "\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                            "column": 49,
+                            "line": 10
+                          },
+                          "message": "Error: locator.textContent: Error: strict mode violation: locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ }) resolved to 2 elements:\n    1) <div class=\"mt-4 flex items-center justify-between text-sm text-gray-600\">…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(3)\n    2) <div>…</div> aka locator('div').filter({ hasText: '총 7개의 메모' }).nth(4)\n\nCall log:\n\u001b[2m  - waiting for locator('div').filter({ hasText: /^총 [0-9]+개의 메모$/ })\u001b[22m\n\n\n\u001b[0m \u001b[90m  8 |\u001b[39m     \u001b[90m// 기존 메모 개수 확인\u001b[39m\n \u001b[90m  9 |\u001b[39m     \u001b[36mconst\u001b[39m statsLocator \u001b[33m=\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'div'\u001b[39m)\u001b[33m.\u001b[39mfilter({ hasText\u001b[33m:\u001b[39m \u001b[35m/^총 [0-9]+개의 메모$/\u001b[39m })\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 10 |\u001b[39m     \u001b[36mconst\u001b[39m initialStatsText \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m statsLocator\u001b[33m.\u001b[39mtextContent()\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 11 |\u001b[39m     \u001b[36mconst\u001b[39m initialMemoCount \u001b[33m=\u001b[39m initialStatsText \u001b[33m?\u001b[39m parseInt(initialStatsText\u001b[33m.\u001b[39mmatch(\u001b[35m/[0-9]+/\u001b[39m)[\u001b[35m0\u001b[39m]\u001b[33m,\u001b[39m \u001b[35m10\u001b[39m) \u001b[33m:\u001b[39m \u001b[35m0\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 12 |\u001b[39m\n \u001b[90m 13 |\u001b[39m     \u001b[90m// 2. '새 메모' 버튼을 클릭하여 메모 작성 폼을 엽니다.\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts:10:49\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-08-01T06:14:32.648Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\masocampus\\Desktop\\memo-app\\test-results\\e2e-create-memo-새-메모-작성-사용자는-새로운-메모를-작성할-수-있다-webkit\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\masocampus\\Desktop\\memo-app\\tests\\e2e\\create-memo.spec.ts",
+                        "column": 49,
+                        "line": 10
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8724cab8ac325ec217a5-9c0b1028658126a04948",
+              "file": "e2e/create-memo.spec.ts",
+              "line": 4,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-08-01T06:14:20.533Z",
+    "duration": 19005.338,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 3,
+    "flaky": 0
+  }
+}
