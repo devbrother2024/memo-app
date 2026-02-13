@@ -1,0 +1,43 @@
+# Page snapshot
+
+```yaml
+- banner:
+  - heading "📝 메모 앱" [level=1]
+  - button "새 메모":
+    - img
+    - text: 새 메모
+- main:
+  - img
+  - textbox "메모 검색..."
+  - combobox:
+    - option "전체 카테고리" [selected]
+    - option "개인 (0)"
+    - option "업무 (0)"
+    - option "학습 (0)"
+    - option "아이디어 (0)"
+    - option "기타 (0)"
+  - text: 총 0개의 메모
+  - img
+  - heading "아직 메모가 없습니다" [level=3]
+  - paragraph: 첫 번째 메모를 작성해보세요!
+- heading "새 메모 작성" [level=2]
+- button:
+  - img
+- text: 제목 *
+- textbox "제목 *": 제목만 있는 메모
+- text: 카테고리
+- combobox "카테고리":
+  - option "개인"
+  - option "업무" [selected]
+  - option "학습"
+  - option "아이디어"
+  - option "기타"
+- text: 내용 * (마크다운 지원)
+- paragraph: 내용을 입력해주세요.
+- text: 태그
+- textbox "태그를 입력하고 Enter를 누르세요"
+- button "추가"
+- button "취소"
+- button "저장하기"
+- alert
+```

@@ -1,14 +1,22 @@
 'use client'
 
+import dynamic from 'next/dynamic'
 import { Memo, MEMO_CATEGORIES } from '@/types/memo'
+
+// Markdown 프리뷰 전용 컴포넌트 동적 로드
+const MarkdownPreview = dynamic(
+  () => import('@uiw/react-markdown-preview'),
+  { ssr: false }
+)
 
 interface MemoItemProps {
   memo: Memo
   onEdit: (memo: Memo) => void
-  onDelete: (id: string) => void
+  onDelete: (id: string) => Promise<void>
+  onView?: (memo: Memo) => void
 }
 
-export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
+export default function MemoItem({ memo, onEdit, onDelete, onView }: MemoItemProps) {
   const formatDate = (dateString: string) => {
     const date = new Date(dateString)
     return date.toLocaleDateString('ko-KR', {
@@ -31,8 +39,19 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
     return colors[category as keyof typeof colors] || colors.other
   }
 
+  const handleCardClick = (e: React.MouseEvent) => {
+    // 버튼 클릭 시에는 카드 클릭 이벤트를 실행하지 않음
+    if ((e.target as HTMLElement).closest('button')) {
+      return
+    }
+    onView?.(memo)
+  }
+
   return (
-    <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200">
+    <div 
+      className="bg-white rounded-lg shadow-md border border-gray-200 p-6 hover:shadow-lg transition-shadow duration-200 cursor-pointer"
+      onClick={handleCardClick}
+    >
       {/* 헤더 */}
       <div className="flex justify-between items-start mb-3">
         <div className="flex-1">
@@ -47,7 +66,7 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
                 memo.category}
             </span>
             <span className="text-xs text-gray-500">
-              {formatDate(memo.updatedAt)}
+              {formatDate(memo.updated_at)}
             </span>
           </div>
         </div>
@@ -74,9 +93,14 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
             </svg>
           </button>
           <button
-            onClick={() => {
+            onClick={async () => {
               if (window.confirm('정말로 이 메모를 삭제하시겠습니까?')) {
-                onDelete(memo.id)
+                try {
+                  await onDelete(memo.id)
+                } catch (error) {
+                  console.error('Failed to delete memo:', error)
+                  alert('메모 삭제에 실패했습니다.')
+                }
               }
             }}
             className="p-2 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
@@ -99,11 +123,22 @@ export default function MemoItem({ memo, onEdit, onDelete }: MemoItemProps) {
         </div>
       </div>
 
-      {/* 내용 */}
+      {/* 내용 - 마크다운 프리뷰 */}
       <div className="mb-4">
-        <p className="text-gray-700 text-sm leading-relaxed line-clamp-3">
-          {memo.content}
-        </p>
+        <div className="text-gray-700 text-sm leading-relaxed line-clamp-3 prose prose-sm max-w-none prose-headings:text-sm prose-p:text-sm prose-li:text-sm">
+          <MarkdownPreview 
+            source={memo.content} 
+            style={{ 
+              backgroundColor: 'transparent',
+              fontSize: '0.875rem',
+              lineHeight: '1.5rem'
+            }}
+            className="text-gray-700"
+            wrapperElement={{
+              'data-color-mode': 'light'
+            }}
+          />
+        </div>
       </div>
 
       {/* 태그 */}

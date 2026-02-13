@@ -4,8 +4,11 @@ export interface Memo {
   content: string
   category: string
   tags: string[]
-  createdAt: string
-  updatedAt: string
+  created_at: string
+  updated_at: string
+  // 호환성을 위한 computed properties
+  createdAt?: string
+  updatedAt?: string
 }
 
 export interface MemoFormData {

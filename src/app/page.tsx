@@ -23,14 +23,14 @@ export default function Home() {
   const [isFormOpen, setIsFormOpen] = useState(false)
   const [editingMemo, setEditingMemo] = useState<Memo | null>(null)
 
-  const handleCreateMemo = (formData: MemoFormData) => {
-    createMemo(formData)
+  const handleCreateMemo = async (formData: MemoFormData) => {
+    await createMemo(formData)
     setIsFormOpen(false)
   }
 
-  const handleUpdateMemo = (formData: MemoFormData) => {
+  const handleUpdateMemo = async (formData: MemoFormData) => {
     if (editingMemo) {
-      updateMemo(editingMemo.id, formData)
+      await updateMemo(editingMemo.id, formData)
       setEditingMemo(null)
     }
   }
